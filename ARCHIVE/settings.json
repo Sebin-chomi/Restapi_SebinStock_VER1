@@ -1,0 +1,10 @@
+{
+  "process_name": "모의",
+  "auto_start": false,
+  "search_seq": "1",
+  "take_profit_rate": 5.0,
+  "stop_loss_rate": -10.0,
+  "buy_ratio": 8.33,
+  "total_capital": 4000000,
+  "max_daily_stocks": 3
+}

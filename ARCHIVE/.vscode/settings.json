@@ -1,0 +1,30 @@
+{
+    // Python 자동 포맷팅 설정
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    
+    // Black 포맷터 설정
+    "black-formatter.args": [
+        "--line-length=100"
+    ],
+    
+    // autopep8 설정 (대안)
+    // "python.formatting.provider": "autopep8",
+    // "python.formatting.autopep8Args": [
+    //     "--max-line-length=100",
+    //     "--aggressive"
+    // ],
+    
+    // Python 린터 설정
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=100"
+    ]
+}

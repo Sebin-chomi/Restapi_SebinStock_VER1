@@ -1,0 +1,18 @@
+# 개발용 도구 (선택사항)
+# 설치: pip install -r requirements-dev.txt
+
+# 코드 포맷터
+black>=23.0.0
+autopep8>=2.0.0
+
+# 린터
+flake8>=6.0.0
+pylint>=2.17.0
+
+# 타입 체커
+mypy>=1.0.0
+
+# 최신 빠른 포맷터 (선택사항)
+# ruff>=0.1.0
+
+
