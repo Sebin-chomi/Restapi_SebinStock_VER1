@@ -1,4 +1,8 @@
+# ===============================
+# test/market_hour.py
+# ===============================
 import datetime
+
 
 class MarketHour:
 	"""장 시간 관련 상수 및 메서드를 관리하는 클래스"""
@@ -47,3 +51,25 @@ class MarketHour:
 		now = datetime.datetime.now()
 		market_end = cls._get_market_time(cls.MARKET_END_HOUR, cls.MARKET_END_MINUTE)
 		return now >= market_end and (now - market_end).seconds < 60  # 1분 이내
+
+
+# ==================================================
+# DayController용 함수 인터페이스 (추가)
+# 👉 기존 클래스 로직 재사용
+# ==================================================
+
+def is_market_open(now: datetime.datetime | None = None) -> bool:
+	if now is None:
+		now = datetime.datetime.now()
+	return MarketHour.is_market_open_time()
+
+
+def get_market_open_time(now: datetime.datetime | None = None) -> datetime.datetime:
+	if now is None:
+		now = datetime.datetime.now()
+	return now.replace(
+		hour=MarketHour.MARKET_START_HOUR,
+		minute=MarketHour.MARKET_START_MINUTE,
+		second=0,
+		microsecond=0,
+	)

@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "bot_id": "scout_v1",
+    "stk_cd": "005930",
+    "date": "2026-01-01",
+    "session": "오전"
+  },
+  "observations": {
+    "VolumeObserver": {
+      "occurred": false,
+      "time": null
+    },
+    "BaseCandleObserver": {
+      "formed": false,
+      "confirmed_time": null,
+      "high_low_updated": false
+    },
+    "BoxObserver": {
+      "formed": true,
+      "duration": "중간",
+      "touch_count": null
+    }
+  },
+  "created_at": "2026-01-01 18:36:39"
+}

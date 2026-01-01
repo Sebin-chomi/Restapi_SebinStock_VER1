@@ -6,6 +6,11 @@ from weekly_pnl_graph import generate_weekly_pnl_graph
 from test.tel_send import send_message, send_photo
 
 
+from test.tel_send import send_message
+
+# 🔽 [추가] 감시 종목 저장소
+from test.framework.watchlist.store import add_stock, get_watchlist
+
 
 _app_ref = None
 
@@ -29,6 +34,38 @@ def handle_command(text: str, token=None):
             "/add 종목\n/remove 종목\n/list"
         )
         return
+        if not text:
+        return
+
+    parts = text.strip().split()
+    cmd = parts[0].lower()
+
+    # ==================================================
+    # 🔽 [추가] /add 종목코드
+    # ==================================================
+    if cmd == "/add" and len(parts) == 2:
+        stk_cd = parts[1]
+        add_stock(stk_cd)
+
+        send_message(
+            "➕ 감시 종목 추가\n\n"
+            f"종목: {stk_cd}\n\n"
+            "현재 감시 목록:\n" +
+            "\n".join(get_watchlist())
+        )
+        return
+
+    # ==================================================
+    # 🔽 [추가] /list
+    # ==================================================
+    if cmd == "/list":
+        send_message(
+            "📋 현재 감시 종목\n\n" +
+            "\n".join(get_watchlist())
+        )
+        return
+
+
 
     # ===============================
     # 원격 정지 / 재개
