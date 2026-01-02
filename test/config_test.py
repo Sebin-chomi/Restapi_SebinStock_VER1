@@ -155,7 +155,7 @@ SUMMARY_REPORT_PATH = "./reports/"
 # 📩 텔레그램
 # =====================================================
 telegram_chat_id = "8254571263"
-telegram_token = "7995086247:AAGIueTwRd_aHFZiodWoEqK2luGq4OcA034"
+telegram_token = "*********"
 
 # ======================================================
 # 💳 계좌 정보
@@ -266,3 +266,6 @@ ENV_NAME = "TEST"   # 단순히 가상환경이름 지정해둔거
 # 🧪 TEST 전용 옵션
 # ==================================================
 FORCE_FAKE_SELL = True
+
+# 디버그에서 활용
+DEBUG = True

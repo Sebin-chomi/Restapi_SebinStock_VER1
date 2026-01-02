@@ -1,23 +1,26 @@
-# ===============================
-# test/framework/watchlist/store.py
-# ===============================
-
-FIXED_WATCHLIST = ["005930", "000660", "035420"]  # 예시: 삼성전자, SK하이닉스, NAVER
-_dynamic_watchlist: list[str] = []
+# 정찰봇 감시 종목 (동적 주입용)
+_DYNAMIC_WATCHLIST = []
 
 
-def get_watchlist() -> list[str]:
-    return FIXED_WATCHLIST + _dynamic_watchlist
+MAX_DYNAMIC = 6
 
 
 def add_stock(stk_cd: str):
-    if stk_cd not in _dynamic_watchlist and len(_dynamic_watchlist) < 3:
-        _dynamic_watchlist.append(stk_cd)
+    if stk_cd in _DYNAMIC_WATCHLIST:
+        return
+    if len(_DYNAMIC_WATCHLIST) >= MAX_DYNAMIC:
+        return
+    _DYNAMIC_WATCHLIST.append(stk_cd)
+
 
 def remove_stock(stk_cd: str):
-    if stk_cd in _dynamic_watchlist:
-        _dynamic_watchlist.remove(stk_cd)
+    if stk_cd in _DYNAMIC_WATCHLIST:
+        _DYNAMIC_WATCHLIST.remove(stk_cd)
+
+
+def get_watchlist():
+    return list(_DYNAMIC_WATCHLIST)
 
 
 def clear_dynamic():
-    _dynamic_watchlist.clear()
+    _DYNAMIC_WATCHLIST.clear()

@@ -4,83 +4,66 @@
 import asyncio
 from datetime import datetime
 
-from test.market_hour import is_market_open, get_market_open_time
+from test.market_hour import MarketHour
 from test.framework.engine.runner import MainApp
 from test.framework.record.day_summary import format_day_summary
-from test.framework.record.event_notifier import should_notify, format_event_alert
-from test.tel_logger import tel_log
 from test.framework.watchlist.store import clear_dynamic
+from test.tel_logger import tel_log
+from config import DEBUG
 
 
 class DayController:
-    def __init__(self, bot_id: str = "scout_v1"):
+    def __init__(
+        self,
+        bot_id="scout_v1",
+        base_interval_minutes=5,
+        open_interval_minutes=2,
+        open_focus_minutes=30,
+    ):
         self.bot_id = bot_id
         self.engine = MainApp()
 
-        self.total_scout_count = 0
-        self.event_scout_count = 0
+        self.base_interval = base_interval_minutes * 60
+        self.open_interval = open_interval_minutes * 60
+        self.open_focus_sec = open_focus_minutes * 60
 
-        self.fast_interval = 120    # 장 초반 2분
-        self.normal_interval = 300  # 이후 5분
-        self.fast_duration_sec = 30 * 60  # 장 초반 30분
+        self.total_scout_count = 0
 
     async def run(self):
-        tel_log(
-            title="SYSTEM",
-            body="📡 DayController 시작 (정찰 대기)",
-        )
+        tel_log("SYSTEM", "📡 DayController 시작 (정찰 대기)")
 
-        # 장 시작 대기
-        while not is_market_open():
+        while not MarketHour.is_market_open_time():
+            if DEBUG:
+                print("[DAY HEARTBEAT] WAIT_MARKET")
             await asyncio.sleep(30)
 
-        market_open_time = get_market_open_time()
-        tel_log(
-            title="SYSTEM",
-            body="🟢 장 시작 감지 → 정찰 시작",
-        )
+        market_open_time = datetime.now()
 
-        # 장 중 루프
-        while is_market_open():
-            now = datetime.now()
-            elapsed = (now - market_open_time).total_seconds()
+        while MarketHour.is_market_open_time():
+            elapsed = (datetime.now() - market_open_time).total_seconds()
+            is_open_phase = elapsed <= self.open_focus_sec
 
-            interval = (
-                self.fast_interval
-                if elapsed <= self.fast_duration_sec
-                else self.normal_interval
+            interval = self.open_interval if is_open_phase else self.base_interval
+            session = "OPEN" if is_open_phase else "NORMAL"
+
+            if DEBUG:
+                print(f"[DAY HEARTBEAT] {session} (interval={interval}s)")
+
+            self.engine.run_once(
+                session=session,
+                interval_min=interval // 60,
             )
 
-            # 정찰 1회 실행
-            final_payload = await self.engine.run_once()
             self.total_scout_count += 1
-
-            # 이벤트 알림 (선별)
-            if should_notify(final_payload["observations"]):
-                self.event_scout_count += 1
-                tel_log(
-                    title="SCOUT EVENT",
-                    body=format_event_alert(
-                        meta=final_payload["meta"],
-                        observations=final_payload["observations"],
-                    ),
-                )
-
             await asyncio.sleep(interval)
 
-        # ===============================
-        # 장 종료 처리
-        # ===============================
-        summary_msg = format_day_summary(
-            bot_id=self.bot_id,
-            total_count=self.total_scout_count,
-            event_count=self.event_scout_count,
-        )
-
         tel_log(
-            title="DAY SUMMARY",
-            body=summary_msg,
+            "DAY SUMMARY",
+            format_day_summary(
+                bot_id=self.bot_id,
+                total_scout_count=self.total_scout_count,
+                event_scout_count=0,
+            ),
         )
 
-        # 🔚 변동 감시 종목 초기화 (여기가 맞는 위치)
         clear_dynamic()

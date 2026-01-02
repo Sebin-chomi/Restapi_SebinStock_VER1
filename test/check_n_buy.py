@@ -14,14 +14,23 @@ _balance_error_notified = False
 def chk_n_buy(stk_cd: str, token: str, account_state):
     global _balance_error_notified
 
+    # 🔽 observer 기본 결과
+    observer_result = {
+        "triggered": False,
+        "reason": None,
+    }
+
     if not TEST_MODE and not is_trade_time():
-        return
+        observer_result["reason"] = "NOT_TRADE_TIME"
+        return observer_result
 
     if account_state.has_position(stk_cd):
-        return
+        observer_result["reason"] = "ALREADY_HOLDING"
+        return observer_result
 
     if _pending_orders.get(stk_cd):
-        return
+        observer_result["reason"] = "PENDING_ORDER"
+        return observer_result
 
     raw_cash = get_available_cash(token)
     if raw_cash is None or raw_cash <= 0:
@@ -32,11 +41,14 @@ def chk_n_buy(stk_cd: str, token: str, account_state):
                 stk_cd=stk_cd,
             )
             _balance_error_notified = True
-        return
+
+        observer_result["reason"] = "NO_CASH"
+        return observer_result
 
     available_cash = min(raw_cash, STRATEGY_MAX_CASH)
     if available_cash <= 0:
-        return
+        observer_result["reason"] = "CASH_LIMIT"
+        return observer_result
 
     _pending_orders[stk_cd] = True
     buy_qty = 1
@@ -51,6 +63,9 @@ def chk_n_buy(stk_cd: str, token: str, account_state):
         result = buy(stk_cd, buy_qty, token)
 
         if result.get("success"):
+            observer_result["triggered"] = True
+            observer_result["reason"] = "BUY_SUCCESS"
+
             # 🔥 TEST: 가짜 포지션 주입
             if TEST_MODE:
                 account_state.holdings[stk_cd] = {
@@ -72,6 +87,8 @@ def chk_n_buy(stk_cd: str, token: str, account_state):
                 stk_cd=stk_cd,
             )
         else:
+            observer_result["reason"] = "BUY_FAIL"
+
             tel_log(
                 title="BUY FAIL",
                 body=str(result),
@@ -80,3 +97,5 @@ def chk_n_buy(stk_cd: str, token: str, account_state):
 
     finally:
         _pending_orders.pop(stk_cd, None)
+
+    return observer_result
