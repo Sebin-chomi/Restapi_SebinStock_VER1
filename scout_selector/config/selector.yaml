@@ -1,0 +1,25 @@
+# quota:
+#   volume: 2
+#   structure: 2
+#   theme: 2
+#   largecap: 2
+
+# largecap_symbols:
+#   - "005930"
+#   - "000660"
+
+# filters:
+#   min_price: 500
+#   min_turnover_krw: 2000000000
+#   min_avg_vol_20: 50000
+
+# volume:
+#   vol_spike_ratio_min: 2.0
+#   volatility_min: 0.03
+
+# structure:
+#   range_min: 0.02
+#   range_max: 0.10
+
+# theme:
+#   min_score: 0.4

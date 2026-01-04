@@ -4,7 +4,7 @@
 import os
 import json
 from datetime import datetime
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 
 BASE_DIR = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "../../../records/scout")
@@ -12,9 +12,6 @@ BASE_DIR = os.path.abspath(
 os.makedirs(BASE_DIR, exist_ok=True)
 
 
-# -------------------------------
-# Record 생성
-# -------------------------------
 def build_scout_record_v2(
     *,
     bot_id: str,
@@ -22,14 +19,15 @@ def build_scout_record_v2(
     session: str,
     interval_min: int,
     is_large_cap: bool = False,
-    snapshot: Dict[str, Any] | None = None,
-    observer: Dict[str, Any] | None = None,
-    base_candle: Dict[str, Any] | None = None,
-    box: Dict[str, Any] | None = None,
-    outcome: Dict[str, Any] | None = None,
-    expectation: Dict[str, Any] | None = None,
-    no_event_reason: List[str] | None = None,
-    environment: Dict[str, Any] | None = None,
+    snapshot: Optional[Dict[str, Any]] = None,
+    observer: Optional[Dict[str, Any]] = None,
+    base_candle: Optional[Dict[str, Any]] = None,
+    box: Optional[Dict[str, Any]] = None,
+    outcome: Optional[Dict[str, Any]] = None,
+    expectation: Optional[Dict[str, Any]] = None,
+    no_event_reason: Optional[List[str]] = None,
+    environment: Optional[Dict[str, Any]] = None,
+    flow: Optional[Dict[str, Any]] = None,   # 🔽 [추가]
 ) -> Dict[str, Any]:
     now = datetime.now()
 
@@ -44,24 +42,39 @@ def build_scout_record_v2(
             "stock_code": stock_code,
             "is_large_cap": is_large_cap,
         },
+
+        # 🔹 상태 스냅샷 (항상 기록)
         "snapshot": snapshot or {},
+
+        # 🔹 Observer 결과 (있다/없다)
         "observer": observer or {"triggered": False},
+
         "base_candle": base_candle or {"exists": False},
         "box": box or {"formed": False},
+
+        # 🔹 결과 / 기대 (오늘은 비워둬도 OK)
         "outcome": outcome or {},
         "expectation": expectation or {},
+
+        # 🔹 이벤트 미발생 사유
         "no_event_reason": no_event_reason or [],
+
+        # 🔹 시장 환경
         "environment": environment or {},
+
+        # 🔹 🔽 수급 정보 (설명자 전용)
+        "flow": flow or {
+            "foreign": None,
+            "institution": None,
+        },
+
         "interval_min": interval_min,
     }
 
     return record
 
 
-# -------------------------------
-# 저장 (종목별 JSONL)
-# -------------------------------
-def save_scout_record(record: Dict[str, Any]):
+def save_scout_record(record: Dict[str, Any]) -> str:
     stock = record["meta"]["stock_code"]
     date = record["meta"]["date"]
 
