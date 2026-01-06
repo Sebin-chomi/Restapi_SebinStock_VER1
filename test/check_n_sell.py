@@ -38,11 +38,13 @@ def chk_n_sell(stk_cd: str, token: str, account_state):
         pos = account_state.holdings[stk_cd]
         current_price = int(pos["avg_price"] * 1.01)
 
-        tel_log(
-            title="TEST SELL PRICE",
-            body=f"{current_price}",
-            stk_cd=stk_cd,
-        )
+        from config import ENABLE_TRADE_NOTIFICATIONS
+        if ENABLE_TRADE_NOTIFICATIONS:
+            tel_log(
+                title="TEST SELL PRICE",
+                body=f"{current_price}",
+                stk_cd=stk_cd,
+            )
 
     qty = sell_qty(account_state, stk_cd)
     if qty <= 0:
@@ -52,11 +54,13 @@ def chk_n_sell(stk_cd: str, token: str, account_state):
     _pending_sell_orders[stk_cd] = True
 
     try:
-        tel_log(
-            title="SELL TRY",
-            body=f"{stk_cd} {qty}주",
-            stk_cd=stk_cd,
-        )
+        from config import ENABLE_TRADE_NOTIFICATIONS
+        if ENABLE_TRADE_NOTIFICATIONS:
+            tel_log(
+                title="SELL TRY",
+                body=f"{stk_cd} {qty}주",
+                stk_cd=stk_cd,
+            )
 
         result = sell(stk_cd, qty, token)
 
@@ -67,19 +71,21 @@ def chk_n_sell(stk_cd: str, token: str, account_state):
             if TEST_MODE:
                 account_state.holdings.pop(stk_cd, None)
 
-            tel_log(
-                title="SELL SUCCESS",
-                body="매도 완료",
-                stk_cd=stk_cd,
-            )
+            if ENABLE_TRADE_NOTIFICATIONS:
+                tel_log(
+                    title="SELL SUCCESS",
+                    body="매도 완료",
+                    stk_cd=stk_cd,
+                )
         else:
             observer_result["reason"] = "SELL_FAIL"
 
-            tel_log(
-                title="SELL FAIL",
-                body=str(result),
-                stk_cd=stk_cd,
-            )
+            if ENABLE_TRADE_NOTIFICATIONS:
+                tel_log(
+                    title="SELL FAIL",
+                    body=str(result),
+                    stk_cd=stk_cd,
+                )
 
     finally:
         _pending_sell_orders.pop(stk_cd, None)

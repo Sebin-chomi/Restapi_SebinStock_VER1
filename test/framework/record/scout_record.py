@@ -11,6 +11,9 @@ BASE_DIR = os.path.abspath(
 )
 os.makedirs(BASE_DIR, exist_ok=True)
 
+# 첫 정상 데이터 날짜 (메타 정보용)
+FIRST_VALID_DATE = "2026-01-07"
+
 
 def build_scout_record_v2(
     *,
@@ -31,16 +34,20 @@ def build_scout_record_v2(
 ) -> Dict[str, Any]:
     now = datetime.now()
 
+    record_date = now.strftime("%Y-%m-%d")
+    
     record = {
         "meta": {
             "schema_version": "v2",
             "bot_id": bot_id,
-            "date": now.strftime("%Y-%m-%d"),
+            "date": record_date,
             "time": now.strftime("%H:%M:%S"),
             "timestamp": now.isoformat(),
             "session": session,
             "stock_code": stock_code,
             "is_large_cap": is_large_cap,
+            # ✅ 첫 정상 데이터 날짜 메타 (첫 정상 데이터 날짜 이후부터 기록)
+            "first_valid_date": FIRST_VALID_DATE if record_date >= FIRST_VALID_DATE else None,
         },
 
         # 🔹 상태 스냅샷 (항상 기록)

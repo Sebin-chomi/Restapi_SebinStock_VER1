@@ -1,0 +1,18 @@
+{
+  "date": "20260105",
+  "source": "kiwoom_condition",
+  "conditions": [
+    {
+      "condition_name": "AI_관련주",
+      "symbols": ["035420", "030200", "064350"]
+    },
+    {
+      "condition_name": "거래량_급증",
+      "symbols": ["068270", "096530"]
+    }
+  ]
+}
+
+
+
+

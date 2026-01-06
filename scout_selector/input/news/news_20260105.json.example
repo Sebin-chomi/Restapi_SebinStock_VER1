@@ -1,0 +1,22 @@
+{
+  "date": "20260105",
+  "source": "naver_news",
+  "items": [
+    {
+      "symbol": "035420",
+      "headline": "네이버, AI 검색 고도화 발표",
+      "keywords": ["AI", "검색"],
+      "published_at": "2026-01-05T09:12:00"
+    },
+    {
+      "symbol": "068270",
+      "headline": "바이오 업종 강세",
+      "keywords": ["바이오"],
+      "published_at": "2026-01-05T10:30:00"
+    }
+  ]
+}
+
+
+
+

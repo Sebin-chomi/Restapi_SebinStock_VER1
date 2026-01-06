@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "date": "2026-01-05",
+    "generated_at": "2026-01-05T20:40:24.972678",
+    "scout_version": "scout_v1",
+    "test_mode": true,
+    "condition_id": null
+  },
+  "observer_stats": {
+    "total_records": 584,
+    "total_stocks": 8,
+    "by_stock": {
+      "005930": {
+        "records": 73,
+        "observer_triggered_records": 73
+      },
+      "000660": {
+        "records": 73,
+        "observer_triggered_records": 73
+      },
+      "008350": {
+        "records": 73,
+        "observer_triggered_records": 73
+      },
+      "900270": {
+        "records": 73,
+        "observer_triggered_records": 73
+      },
+      "049630": {
+        "records": 73,
+        "observer_triggered_records": 73
+      },
+      "191410": {
+        "records": 73,
+        "observer_triggered_records": 73
+      },
+      "936300": {
+        "records": 73,
+        "observer_triggered_records": 73
+      },
+      "348370": {
+        "records": 73,
+        "observer_triggered_records": 73
+      }
+    }
+  },
+  "cycle_summary": {
+    "triggered_records": 584,
+    "triggered_cycles": 8,
+    "open_cycles": 8
+  },
+  "cycle_outcome_distribution": {
+    "reached_1pct": 0,
+    "no_reaction": 0,
+    "timeout": 8,
+    "manual_stop": 0
+  },
+  "representative_cycles": [
+    {
+      "cycle_id": "2026-01-05-005930-01",
+      "stock": "005930",
+      "start_time": "2026-01-05T09:00:08.720909",
+      "end_time": "2026-01-05T15:29:09.742795",
+      "duration_sec": 23341,
+      "exit_type": "timeout"
+    },
+    {
+      "cycle_id": "2026-01-05-000660-02",
+      "stock": "000660",
+      "start_time": "2026-01-05T09:00:15.799665",
+      "end_time": "2026-01-05T15:29:09.742795",
+      "duration_sec": 23333,
+      "exit_type": "timeout"
+    }
+  ],
+  "observation_hints": {
+    "dominant_exit_type": "timeout",
+    "avg_cycle_duration_sec": 23317.416360875
+  },
+  "price_zone_summary": {
+    "zones": []
+  },
+  "manual_notes": {
+    "market_one_liner": null,
+    "confusing_cycle_id": null,
+    "unnecessary_action_note": null,
+    "free_memo": null
+  }
+}

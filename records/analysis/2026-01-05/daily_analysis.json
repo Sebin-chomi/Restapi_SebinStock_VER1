@@ -1,0 +1,3879 @@
+{
+  "date": "2026-01-05",
+  "generated_at": "2026-01-05T20:40:24.949767",
+  "observer_stats": {
+    "total_records": 584,
+    "by_stock": {
+      "005930": {
+        "records": 73,
+        "triggered_records": 73,
+        "box_formed": 0,
+        "base_candle_exists": 0
+      },
+      "000660": {
+        "records": 73,
+        "triggered_records": 73,
+        "box_formed": 0,
+        "base_candle_exists": 0
+      },
+      "008350": {
+        "records": 73,
+        "triggered_records": 73,
+        "box_formed": 0,
+        "base_candle_exists": 0
+      },
+      "900270": {
+        "records": 73,
+        "triggered_records": 73,
+        "box_formed": 0,
+        "base_candle_exists": 0
+      },
+      "049630": {
+        "records": 73,
+        "triggered_records": 73,
+        "box_formed": 0,
+        "base_candle_exists": 0
+      },
+      "191410": {
+        "records": 73,
+        "triggered_records": 73,
+        "box_formed": 0,
+        "base_candle_exists": 0
+      },
+      "936300": {
+        "records": 73,
+        "triggered_records": 73,
+        "box_formed": 0,
+        "base_candle_exists": 0
+      },
+      "348370": {
+        "records": 73,
+        "triggered_records": 73,
+        "box_formed": 0,
+        "base_candle_exists": 0
+      }
+    },
+    "observer_summary": {
+      "triggered_records": 584,
+      "triggered_stocks": [
+        "005930",
+        "008350",
+        "936300",
+        "348370",
+        "191410",
+        "049630",
+        "000660",
+        "900270"
+      ],
+      "triggers": [
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:00:08.720909",
+          "session": "OPEN",
+          "record_index": 0
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:00:15.799665",
+          "session": "OPEN",
+          "record_index": 1
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:00:22.070351",
+          "session": "OPEN",
+          "record_index": 2
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:00:29.333712",
+          "session": "OPEN",
+          "record_index": 3
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:00:35.913268",
+          "session": "OPEN",
+          "record_index": 4
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:00:42.421948",
+          "session": "OPEN",
+          "record_index": 5
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:00:48.840568",
+          "session": "OPEN",
+          "record_index": 6
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:00:55.511052",
+          "session": "OPEN",
+          "record_index": 7
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:03:01.775257",
+          "session": "OPEN",
+          "record_index": 8
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:03:08.499326",
+          "session": "OPEN",
+          "record_index": 9
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:03:15.000822",
+          "session": "OPEN",
+          "record_index": 10
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:03:21.633660",
+          "session": "OPEN",
+          "record_index": 11
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:03:28.045477",
+          "session": "OPEN",
+          "record_index": 12
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:03:34.513693",
+          "session": "OPEN",
+          "record_index": 13
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:03:41.310119",
+          "session": "OPEN",
+          "record_index": 14
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:03:47.577144",
+          "session": "OPEN",
+          "record_index": 15
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:05:54.024074",
+          "session": "OPEN",
+          "record_index": 16
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:06:00.382761",
+          "session": "OPEN",
+          "record_index": 17
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:06:06.664716",
+          "session": "OPEN",
+          "record_index": 18
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:06:13.155246",
+          "session": "OPEN",
+          "record_index": 19
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:06:19.544960",
+          "session": "OPEN",
+          "record_index": 20
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:06:26.105143",
+          "session": "OPEN",
+          "record_index": 21
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:06:32.494591",
+          "session": "OPEN",
+          "record_index": 22
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:06:39.063517",
+          "session": "OPEN",
+          "record_index": 23
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:08:45.620223",
+          "session": "OPEN",
+          "record_index": 24
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:08:52.298198",
+          "session": "OPEN",
+          "record_index": 25
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:08:58.929536",
+          "session": "OPEN",
+          "record_index": 26
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:09:05.411170",
+          "session": "OPEN",
+          "record_index": 27
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:09:12.196379",
+          "session": "OPEN",
+          "record_index": 28
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:09:18.675953",
+          "session": "OPEN",
+          "record_index": 29
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:09:25.433096",
+          "session": "OPEN",
+          "record_index": 30
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:09:31.817694",
+          "session": "OPEN",
+          "record_index": 31
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:11:38.309745",
+          "session": "OPEN",
+          "record_index": 32
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:11:45.769463",
+          "session": "OPEN",
+          "record_index": 33
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:11:52.271962",
+          "session": "OPEN",
+          "record_index": 34
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:11:58.636664",
+          "session": "OPEN",
+          "record_index": 35
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:12:05.592987",
+          "session": "OPEN",
+          "record_index": 36
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:12:12.468863",
+          "session": "OPEN",
+          "record_index": 37
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:12:18.946091",
+          "session": "OPEN",
+          "record_index": 38
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:12:25.430623",
+          "session": "OPEN",
+          "record_index": 39
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:14:31.842319",
+          "session": "OPEN",
+          "record_index": 40
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:14:38.425197",
+          "session": "OPEN",
+          "record_index": 41
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:14:45.934750",
+          "session": "OPEN",
+          "record_index": 42
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:14:52.348742",
+          "session": "OPEN",
+          "record_index": 43
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:14:58.879520",
+          "session": "OPEN",
+          "record_index": 44
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:15:05.697673",
+          "session": "OPEN",
+          "record_index": 45
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:15:12.365855",
+          "session": "OPEN",
+          "record_index": 46
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:15:19.407309",
+          "session": "OPEN",
+          "record_index": 47
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:17:25.762302",
+          "session": "OPEN",
+          "record_index": 48
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:17:32.237111",
+          "session": "OPEN",
+          "record_index": 49
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:17:38.778348",
+          "session": "OPEN",
+          "record_index": 50
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:17:45.416164",
+          "session": "OPEN",
+          "record_index": 51
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:17:51.933526",
+          "session": "OPEN",
+          "record_index": 52
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:17:58.580120",
+          "session": "OPEN",
+          "record_index": 53
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:18:05.145382",
+          "session": "OPEN",
+          "record_index": 54
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:18:11.674042",
+          "session": "OPEN",
+          "record_index": 55
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:20:19.485020",
+          "session": "OPEN",
+          "record_index": 56
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:20:25.762592",
+          "session": "OPEN",
+          "record_index": 57
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:20:32.434065",
+          "session": "OPEN",
+          "record_index": 58
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:20:38.906549",
+          "session": "OPEN",
+          "record_index": 59
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:20:45.414717",
+          "session": "OPEN",
+          "record_index": 60
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:20:51.752485",
+          "session": "OPEN",
+          "record_index": 61
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:20:58.064235",
+          "session": "OPEN",
+          "record_index": 62
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:21:04.741534",
+          "session": "OPEN",
+          "record_index": 63
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:23:11.277501",
+          "session": "OPEN",
+          "record_index": 64
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:23:17.933563",
+          "session": "OPEN",
+          "record_index": 65
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:23:24.501925",
+          "session": "OPEN",
+          "record_index": 66
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:23:31.031809",
+          "session": "OPEN",
+          "record_index": 67
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:23:37.517759",
+          "session": "OPEN",
+          "record_index": 68
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:23:43.869451",
+          "session": "OPEN",
+          "record_index": 69
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:23:50.413480",
+          "session": "OPEN",
+          "record_index": 70
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:23:57.529574",
+          "session": "OPEN",
+          "record_index": 71
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:26:04.066083",
+          "session": "OPEN",
+          "record_index": 72
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:26:10.384878",
+          "session": "OPEN",
+          "record_index": 73
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:26:18.706055",
+          "session": "OPEN",
+          "record_index": 74
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:26:25.321833",
+          "session": "OPEN",
+          "record_index": 75
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:26:31.876048",
+          "session": "OPEN",
+          "record_index": 76
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:26:38.108804",
+          "session": "OPEN",
+          "record_index": 77
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:26:44.753494",
+          "session": "OPEN",
+          "record_index": 78
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:26:51.048350",
+          "session": "OPEN",
+          "record_index": 79
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:28:57.522511",
+          "session": "OPEN",
+          "record_index": 80
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:29:03.822624",
+          "session": "OPEN",
+          "record_index": 81
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:29:10.311320",
+          "session": "OPEN",
+          "record_index": 82
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:29:17.030380",
+          "session": "OPEN",
+          "record_index": 83
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:29:23.920451",
+          "session": "OPEN",
+          "record_index": 84
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:29:31.494715",
+          "session": "OPEN",
+          "record_index": 85
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:29:38.094633",
+          "session": "OPEN",
+          "record_index": 86
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:29:44.391267",
+          "session": "OPEN",
+          "record_index": 87
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:31:50.675525",
+          "session": "NORMAL",
+          "record_index": 88
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:31:57.130977",
+          "session": "NORMAL",
+          "record_index": 89
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:32:03.851995",
+          "session": "NORMAL",
+          "record_index": 90
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:32:10.332445",
+          "session": "NORMAL",
+          "record_index": 91
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:32:16.876903",
+          "session": "NORMAL",
+          "record_index": 92
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:32:23.203183",
+          "session": "NORMAL",
+          "record_index": 93
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:32:29.781528",
+          "session": "NORMAL",
+          "record_index": 94
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:32:36.387225",
+          "session": "NORMAL",
+          "record_index": 95
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:37:43.070263",
+          "session": "NORMAL",
+          "record_index": 96
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:37:49.291985",
+          "session": "NORMAL",
+          "record_index": 97
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:37:55.785288",
+          "session": "NORMAL",
+          "record_index": 98
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:38:02.260974",
+          "session": "NORMAL",
+          "record_index": 99
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:38:08.792715",
+          "session": "NORMAL",
+          "record_index": 100
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:38:15.086770",
+          "session": "NORMAL",
+          "record_index": 101
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:38:21.467117",
+          "session": "NORMAL",
+          "record_index": 102
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:38:28.186765",
+          "session": "NORMAL",
+          "record_index": 103
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:43:34.535103",
+          "session": "NORMAL",
+          "record_index": 104
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:43:41.021645",
+          "session": "NORMAL",
+          "record_index": 105
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:43:47.546734",
+          "session": "NORMAL",
+          "record_index": 106
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:43:53.822661",
+          "session": "NORMAL",
+          "record_index": 107
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:44:01.190562",
+          "session": "NORMAL",
+          "record_index": 108
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:44:08.051711",
+          "session": "NORMAL",
+          "record_index": 109
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:44:14.529070",
+          "session": "NORMAL",
+          "record_index": 110
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:44:20.845654",
+          "session": "NORMAL",
+          "record_index": 111
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:49:27.684582",
+          "session": "NORMAL",
+          "record_index": 112
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:49:33.997432",
+          "session": "NORMAL",
+          "record_index": 113
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:49:40.558029",
+          "session": "NORMAL",
+          "record_index": 114
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:49:46.965364",
+          "session": "NORMAL",
+          "record_index": 115
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:49:53.580142",
+          "session": "NORMAL",
+          "record_index": 116
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:50:00.008141",
+          "session": "NORMAL",
+          "record_index": 117
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:50:07.844588",
+          "session": "NORMAL",
+          "record_index": 118
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:50:14.372045",
+          "session": "NORMAL",
+          "record_index": 119
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T09:55:20.793780",
+          "session": "NORMAL",
+          "record_index": 120
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T09:55:27.044704",
+          "session": "NORMAL",
+          "record_index": 121
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T09:55:34.553395",
+          "session": "NORMAL",
+          "record_index": 122
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T09:55:41.545759",
+          "session": "NORMAL",
+          "record_index": 123
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T09:55:48.054486",
+          "session": "NORMAL",
+          "record_index": 124
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T09:55:54.617356",
+          "session": "NORMAL",
+          "record_index": 125
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T09:56:00.961424",
+          "session": "NORMAL",
+          "record_index": 126
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T09:56:07.566392",
+          "session": "NORMAL",
+          "record_index": 127
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T10:01:14.168042",
+          "session": "NORMAL",
+          "record_index": 128
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T10:01:20.719595",
+          "session": "NORMAL",
+          "record_index": 129
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T10:01:27.166264",
+          "session": "NORMAL",
+          "record_index": 130
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T10:01:33.712580",
+          "session": "NORMAL",
+          "record_index": 131
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T10:01:40.328661",
+          "session": "NORMAL",
+          "record_index": 132
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T10:01:47.964588",
+          "session": "NORMAL",
+          "record_index": 133
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T10:01:54.436431",
+          "session": "NORMAL",
+          "record_index": 134
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T10:02:01.166035",
+          "session": "NORMAL",
+          "record_index": 135
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T10:07:07.566064",
+          "session": "NORMAL",
+          "record_index": 136
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T10:07:14.106054",
+          "session": "NORMAL",
+          "record_index": 137
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T10:07:21.045466",
+          "session": "NORMAL",
+          "record_index": 138
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T10:07:27.696777",
+          "session": "NORMAL",
+          "record_index": 139
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T10:07:34.110405",
+          "session": "NORMAL",
+          "record_index": 140
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T10:07:40.537760",
+          "session": "NORMAL",
+          "record_index": 141
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T10:07:46.801679",
+          "session": "NORMAL",
+          "record_index": 142
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T10:07:53.432187",
+          "session": "NORMAL",
+          "record_index": 143
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T10:12:59.776534",
+          "session": "NORMAL",
+          "record_index": 144
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T10:13:06.297830",
+          "session": "NORMAL",
+          "record_index": 145
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T10:13:12.539671",
+          "session": "NORMAL",
+          "record_index": 146
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T10:13:18.972622",
+          "session": "NORMAL",
+          "record_index": 147
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T10:13:25.341614",
+          "session": "NORMAL",
+          "record_index": 148
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T10:13:31.916311",
+          "session": "NORMAL",
+          "record_index": 149
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T10:13:38.240684",
+          "session": "NORMAL",
+          "record_index": 150
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T10:13:44.766475",
+          "session": "NORMAL",
+          "record_index": 151
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T10:18:51.241981",
+          "session": "NORMAL",
+          "record_index": 152
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T10:18:57.725148",
+          "session": "NORMAL",
+          "record_index": 153
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T10:19:04.061173",
+          "session": "NORMAL",
+          "record_index": 154
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T10:19:10.470412",
+          "session": "NORMAL",
+          "record_index": 155
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T10:19:16.839618",
+          "session": "NORMAL",
+          "record_index": 156
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T10:19:23.249914",
+          "session": "NORMAL",
+          "record_index": 157
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T10:19:29.824701",
+          "session": "NORMAL",
+          "record_index": 158
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T10:19:36.284278",
+          "session": "NORMAL",
+          "record_index": 159
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T10:24:42.616333",
+          "session": "NORMAL",
+          "record_index": 160
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T10:24:49.866351",
+          "session": "NORMAL",
+          "record_index": 161
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T10:24:56.525727",
+          "session": "NORMAL",
+          "record_index": 162
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T10:25:02.801602",
+          "session": "NORMAL",
+          "record_index": 163
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T10:25:09.572333",
+          "session": "NORMAL",
+          "record_index": 164
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T10:25:15.948333",
+          "session": "NORMAL",
+          "record_index": 165
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T10:25:23.514400",
+          "session": "NORMAL",
+          "record_index": 166
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T10:25:30.222845",
+          "session": "NORMAL",
+          "record_index": 167
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T10:30:36.699905",
+          "session": "NORMAL",
+          "record_index": 168
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T10:30:43.395630",
+          "session": "NORMAL",
+          "record_index": 169
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T10:30:49.719956",
+          "session": "NORMAL",
+          "record_index": 170
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T10:30:57.266471",
+          "session": "NORMAL",
+          "record_index": 171
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T10:31:03.751786",
+          "session": "NORMAL",
+          "record_index": 172
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T10:31:10.079248",
+          "session": "NORMAL",
+          "record_index": 173
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T10:31:16.623280",
+          "session": "NORMAL",
+          "record_index": 174
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T10:31:22.918481",
+          "session": "NORMAL",
+          "record_index": 175
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T10:36:29.441317",
+          "session": "NORMAL",
+          "record_index": 176
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T10:36:35.742964",
+          "session": "NORMAL",
+          "record_index": 177
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T10:36:42.258334",
+          "session": "NORMAL",
+          "record_index": 178
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T10:36:49.266794",
+          "session": "NORMAL",
+          "record_index": 179
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T10:36:55.525858",
+          "session": "NORMAL",
+          "record_index": 180
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T10:37:02.105872",
+          "session": "NORMAL",
+          "record_index": 181
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T10:37:08.482023",
+          "session": "NORMAL",
+          "record_index": 182
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T10:37:14.906391",
+          "session": "NORMAL",
+          "record_index": 183
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T10:42:21.420330",
+          "session": "NORMAL",
+          "record_index": 184
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T10:42:27.881651",
+          "session": "NORMAL",
+          "record_index": 185
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T10:42:34.162656",
+          "session": "NORMAL",
+          "record_index": 186
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T10:42:40.600698",
+          "session": "NORMAL",
+          "record_index": 187
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T10:42:47.946824",
+          "session": "NORMAL",
+          "record_index": 188
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T10:42:54.367086",
+          "session": "NORMAL",
+          "record_index": 189
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T10:43:00.931673",
+          "session": "NORMAL",
+          "record_index": 190
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T10:43:08.290111",
+          "session": "NORMAL",
+          "record_index": 191
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T10:48:14.865014",
+          "session": "NORMAL",
+          "record_index": 192
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T10:48:21.159866",
+          "session": "NORMAL",
+          "record_index": 193
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T10:48:27.614706",
+          "session": "NORMAL",
+          "record_index": 194
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T10:48:34.032987",
+          "session": "NORMAL",
+          "record_index": 195
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T10:48:40.573620",
+          "session": "NORMAL",
+          "record_index": 196
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T10:48:47.016743",
+          "session": "NORMAL",
+          "record_index": 197
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T10:48:53.492553",
+          "session": "NORMAL",
+          "record_index": 198
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T10:48:59.926902",
+          "session": "NORMAL",
+          "record_index": 199
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T10:54:06.992905",
+          "session": "NORMAL",
+          "record_index": 200
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T10:54:13.460406",
+          "session": "NORMAL",
+          "record_index": 201
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T10:54:19.823578",
+          "session": "NORMAL",
+          "record_index": 202
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T10:54:26.809187",
+          "session": "NORMAL",
+          "record_index": 203
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T10:54:33.201434",
+          "session": "NORMAL",
+          "record_index": 204
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T10:54:39.562391",
+          "session": "NORMAL",
+          "record_index": 205
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T10:54:46.277879",
+          "session": "NORMAL",
+          "record_index": 206
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T10:54:53.370485",
+          "session": "NORMAL",
+          "record_index": 207
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T10:59:59.688720",
+          "session": "NORMAL",
+          "record_index": 208
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T11:00:06.236276",
+          "session": "NORMAL",
+          "record_index": 209
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T11:00:12.603025",
+          "session": "NORMAL",
+          "record_index": 210
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T11:00:18.905838",
+          "session": "NORMAL",
+          "record_index": 211
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T11:00:25.372009",
+          "session": "NORMAL",
+          "record_index": 212
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T11:00:31.659741",
+          "session": "NORMAL",
+          "record_index": 213
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T11:00:38.178356",
+          "session": "NORMAL",
+          "record_index": 214
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T11:00:44.662378",
+          "session": "NORMAL",
+          "record_index": 215
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T11:05:51.000438",
+          "session": "NORMAL",
+          "record_index": 216
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T11:05:57.269311",
+          "session": "NORMAL",
+          "record_index": 217
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T11:06:03.624635",
+          "session": "NORMAL",
+          "record_index": 218
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T11:06:10.938600",
+          "session": "NORMAL",
+          "record_index": 219
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T11:06:17.390083",
+          "session": "NORMAL",
+          "record_index": 220
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T11:06:23.796022",
+          "session": "NORMAL",
+          "record_index": 221
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T11:06:30.057570",
+          "session": "NORMAL",
+          "record_index": 222
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T11:06:36.401950",
+          "session": "NORMAL",
+          "record_index": 223
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T11:11:42.696678",
+          "session": "NORMAL",
+          "record_index": 224
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T11:11:49.032463",
+          "session": "NORMAL",
+          "record_index": 225
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T11:11:55.400134",
+          "session": "NORMAL",
+          "record_index": 226
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T11:12:01.727688",
+          "session": "NORMAL",
+          "record_index": 227
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T11:12:08.088523",
+          "session": "NORMAL",
+          "record_index": 228
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T11:12:14.480119",
+          "session": "NORMAL",
+          "record_index": 229
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T11:12:20.872218",
+          "session": "NORMAL",
+          "record_index": 230
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T11:12:27.204058",
+          "session": "NORMAL",
+          "record_index": 231
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T11:17:33.640769",
+          "session": "NORMAL",
+          "record_index": 232
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T11:17:40.131679",
+          "session": "NORMAL",
+          "record_index": 233
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T11:17:46.562504",
+          "session": "NORMAL",
+          "record_index": 234
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T11:17:53.205870",
+          "session": "NORMAL",
+          "record_index": 235
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T11:17:59.481308",
+          "session": "NORMAL",
+          "record_index": 236
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T11:18:07.368191",
+          "session": "NORMAL",
+          "record_index": 237
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T11:18:13.748044",
+          "session": "NORMAL",
+          "record_index": 238
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T11:18:20.074601",
+          "session": "NORMAL",
+          "record_index": 239
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T11:23:26.607725",
+          "session": "NORMAL",
+          "record_index": 240
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T11:23:33.274584",
+          "session": "NORMAL",
+          "record_index": 241
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T11:23:39.646695",
+          "session": "NORMAL",
+          "record_index": 242
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T11:23:45.986845",
+          "session": "NORMAL",
+          "record_index": 243
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T11:23:52.441739",
+          "session": "NORMAL",
+          "record_index": 244
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T11:23:58.788081",
+          "session": "NORMAL",
+          "record_index": 245
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T11:24:05.100627",
+          "session": "NORMAL",
+          "record_index": 246
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T11:24:11.445268",
+          "session": "NORMAL",
+          "record_index": 247
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T11:29:17.851013",
+          "session": "NORMAL",
+          "record_index": 248
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T11:29:24.071707",
+          "session": "NORMAL",
+          "record_index": 249
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T11:29:30.443708",
+          "session": "NORMAL",
+          "record_index": 250
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T11:29:37.683802",
+          "session": "NORMAL",
+          "record_index": 251
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T11:29:44.020194",
+          "session": "NORMAL",
+          "record_index": 252
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T11:29:50.522369",
+          "session": "NORMAL",
+          "record_index": 253
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T11:29:57.076131",
+          "session": "NORMAL",
+          "record_index": 254
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T11:30:03.544697",
+          "session": "NORMAL",
+          "record_index": 255
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T11:35:10.046272",
+          "session": "NORMAL",
+          "record_index": 256
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T11:35:16.423360",
+          "session": "NORMAL",
+          "record_index": 257
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T11:35:23.015370",
+          "session": "NORMAL",
+          "record_index": 258
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T11:35:29.340552",
+          "session": "NORMAL",
+          "record_index": 259
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T11:35:35.681903",
+          "session": "NORMAL",
+          "record_index": 260
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T11:35:42.021917",
+          "session": "NORMAL",
+          "record_index": 261
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T11:35:48.517752",
+          "session": "NORMAL",
+          "record_index": 262
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T11:35:55.755866",
+          "session": "NORMAL",
+          "record_index": 263
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T11:41:02.054387",
+          "session": "NORMAL",
+          "record_index": 264
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T11:41:08.356834",
+          "session": "NORMAL",
+          "record_index": 265
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T11:41:14.792211",
+          "session": "NORMAL",
+          "record_index": 266
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T11:41:21.229561",
+          "session": "NORMAL",
+          "record_index": 267
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T11:41:27.562014",
+          "session": "NORMAL",
+          "record_index": 268
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T11:41:33.965667",
+          "session": "NORMAL",
+          "record_index": 269
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T11:41:40.266098",
+          "session": "NORMAL",
+          "record_index": 270
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T11:41:46.637093",
+          "session": "NORMAL",
+          "record_index": 271
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T11:46:53.114282",
+          "session": "NORMAL",
+          "record_index": 272
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T11:46:59.627367",
+          "session": "NORMAL",
+          "record_index": 273
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T11:47:05.951733",
+          "session": "NORMAL",
+          "record_index": 274
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T11:47:12.279187",
+          "session": "NORMAL",
+          "record_index": 275
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T11:47:18.595590",
+          "session": "NORMAL",
+          "record_index": 276
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T11:47:24.948917",
+          "session": "NORMAL",
+          "record_index": 277
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T11:47:31.351824",
+          "session": "NORMAL",
+          "record_index": 278
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T11:47:37.701423",
+          "session": "NORMAL",
+          "record_index": 279
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T11:52:44.168237",
+          "session": "NORMAL",
+          "record_index": 280
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T11:52:50.477061",
+          "session": "NORMAL",
+          "record_index": 281
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T11:52:56.898529",
+          "session": "NORMAL",
+          "record_index": 282
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T11:53:03.238220",
+          "session": "NORMAL",
+          "record_index": 283
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T11:53:09.500320",
+          "session": "NORMAL",
+          "record_index": 284
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T11:53:15.940359",
+          "session": "NORMAL",
+          "record_index": 285
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T11:53:22.265680",
+          "session": "NORMAL",
+          "record_index": 286
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T11:53:28.652819",
+          "session": "NORMAL",
+          "record_index": 287
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T11:58:35.128125",
+          "session": "NORMAL",
+          "record_index": 288
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T11:58:41.483827",
+          "session": "NORMAL",
+          "record_index": 289
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T11:58:47.774241",
+          "session": "NORMAL",
+          "record_index": 290
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T11:58:54.138818",
+          "session": "NORMAL",
+          "record_index": 291
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T11:59:00.506651",
+          "session": "NORMAL",
+          "record_index": 292
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T11:59:06.839258",
+          "session": "NORMAL",
+          "record_index": 293
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T11:59:13.163594",
+          "session": "NORMAL",
+          "record_index": 294
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T11:59:19.631669",
+          "session": "NORMAL",
+          "record_index": 295
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T12:04:26.162405",
+          "session": "NORMAL",
+          "record_index": 296
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T12:04:33.571520",
+          "session": "NORMAL",
+          "record_index": 297
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T12:04:40.145215",
+          "session": "NORMAL",
+          "record_index": 298
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T12:04:46.412714",
+          "session": "NORMAL",
+          "record_index": 299
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T12:04:52.761814",
+          "session": "NORMAL",
+          "record_index": 300
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T12:04:59.057080",
+          "session": "NORMAL",
+          "record_index": 301
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T12:05:05.839311",
+          "session": "NORMAL",
+          "record_index": 302
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T12:05:12.193506",
+          "session": "NORMAL",
+          "record_index": 303
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T12:10:18.841745",
+          "session": "NORMAL",
+          "record_index": 304
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T12:10:25.185796",
+          "session": "NORMAL",
+          "record_index": 305
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T12:10:31.481160",
+          "session": "NORMAL",
+          "record_index": 306
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T12:10:37.844530",
+          "session": "NORMAL",
+          "record_index": 307
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T12:10:44.167597",
+          "session": "NORMAL",
+          "record_index": 308
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T12:10:50.479021",
+          "session": "NORMAL",
+          "record_index": 309
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T12:10:57.002020",
+          "session": "NORMAL",
+          "record_index": 310
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T12:11:03.358154",
+          "session": "NORMAL",
+          "record_index": 311
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T12:16:09.769162",
+          "session": "NORMAL",
+          "record_index": 312
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T12:16:16.037436",
+          "session": "NORMAL",
+          "record_index": 313
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T12:16:22.405291",
+          "session": "NORMAL",
+          "record_index": 314
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T12:16:28.822616",
+          "session": "NORMAL",
+          "record_index": 315
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T12:16:35.225398",
+          "session": "NORMAL",
+          "record_index": 316
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T12:16:41.740458",
+          "session": "NORMAL",
+          "record_index": 317
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T12:16:48.001813",
+          "session": "NORMAL",
+          "record_index": 318
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T12:16:54.313473",
+          "session": "NORMAL",
+          "record_index": 319
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T12:22:00.625055",
+          "session": "NORMAL",
+          "record_index": 320
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T12:22:07.126501",
+          "session": "NORMAL",
+          "record_index": 321
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T12:22:13.417657",
+          "session": "NORMAL",
+          "record_index": 322
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T12:22:19.848875",
+          "session": "NORMAL",
+          "record_index": 323
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T12:22:27.399019",
+          "session": "NORMAL",
+          "record_index": 324
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T12:22:33.768211",
+          "session": "NORMAL",
+          "record_index": 325
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T12:22:40.122996",
+          "session": "NORMAL",
+          "record_index": 326
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T12:22:46.455784",
+          "session": "NORMAL",
+          "record_index": 327
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T12:27:52.654027",
+          "session": "NORMAL",
+          "record_index": 328
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T12:27:59.146393",
+          "session": "NORMAL",
+          "record_index": 329
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T12:28:05.529509",
+          "session": "NORMAL",
+          "record_index": 330
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T12:28:11.882239",
+          "session": "NORMAL",
+          "record_index": 331
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T12:28:18.284006",
+          "session": "NORMAL",
+          "record_index": 332
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T12:28:24.666620",
+          "session": "NORMAL",
+          "record_index": 333
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T12:28:31.073566",
+          "session": "NORMAL",
+          "record_index": 334
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T12:28:37.466053",
+          "session": "NORMAL",
+          "record_index": 335
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T12:33:43.777717",
+          "session": "NORMAL",
+          "record_index": 336
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T12:33:50.195008",
+          "session": "NORMAL",
+          "record_index": 337
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T12:33:56.436495",
+          "session": "NORMAL",
+          "record_index": 338
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T12:34:02.879470",
+          "session": "NORMAL",
+          "record_index": 339
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T12:34:09.137174",
+          "session": "NORMAL",
+          "record_index": 340
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T12:34:15.526923",
+          "session": "NORMAL",
+          "record_index": 341
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T12:34:22.085509",
+          "session": "NORMAL",
+          "record_index": 342
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T12:34:28.525084",
+          "session": "NORMAL",
+          "record_index": 343
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T12:39:35.078646",
+          "session": "NORMAL",
+          "record_index": 344
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T12:39:41.393078",
+          "session": "NORMAL",
+          "record_index": 345
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T12:39:47.856817",
+          "session": "NORMAL",
+          "record_index": 346
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T12:39:54.235610",
+          "session": "NORMAL",
+          "record_index": 347
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T12:40:00.522323",
+          "session": "NORMAL",
+          "record_index": 348
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T12:40:06.919686",
+          "session": "NORMAL",
+          "record_index": 349
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T12:40:13.215505",
+          "session": "NORMAL",
+          "record_index": 350
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T12:40:19.602539",
+          "session": "NORMAL",
+          "record_index": 351
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T12:45:26.219643",
+          "session": "NORMAL",
+          "record_index": 352
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T12:45:32.579521",
+          "session": "NORMAL",
+          "record_index": 353
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T12:45:38.878421",
+          "session": "NORMAL",
+          "record_index": 354
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T12:45:45.197402",
+          "session": "NORMAL",
+          "record_index": 355
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T12:45:51.629662",
+          "session": "NORMAL",
+          "record_index": 356
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T12:45:58.017723",
+          "session": "NORMAL",
+          "record_index": 357
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T12:46:04.398631",
+          "session": "NORMAL",
+          "record_index": 358
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T12:46:10.711517",
+          "session": "NORMAL",
+          "record_index": 359
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T12:51:17.864723",
+          "session": "NORMAL",
+          "record_index": 360
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T12:51:24.563973",
+          "session": "NORMAL",
+          "record_index": 361
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T12:51:31.028741",
+          "session": "NORMAL",
+          "record_index": 362
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T12:51:37.460646",
+          "session": "NORMAL",
+          "record_index": 363
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T12:51:43.703307",
+          "session": "NORMAL",
+          "record_index": 364
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T12:51:50.406237",
+          "session": "NORMAL",
+          "record_index": 365
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T12:51:56.842735",
+          "session": "NORMAL",
+          "record_index": 366
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T12:52:03.221948",
+          "session": "NORMAL",
+          "record_index": 367
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T12:57:09.547950",
+          "session": "NORMAL",
+          "record_index": 368
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T12:57:16.046879",
+          "session": "NORMAL",
+          "record_index": 369
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T12:57:22.387005",
+          "session": "NORMAL",
+          "record_index": 370
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T12:57:28.696809",
+          "session": "NORMAL",
+          "record_index": 371
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T12:57:34.979258",
+          "session": "NORMAL",
+          "record_index": 372
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T12:57:41.372276",
+          "session": "NORMAL",
+          "record_index": 373
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T12:57:47.842913",
+          "session": "NORMAL",
+          "record_index": 374
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T12:57:54.635663",
+          "session": "NORMAL",
+          "record_index": 375
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T13:03:00.972892",
+          "session": "NORMAL",
+          "record_index": 376
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T13:03:07.197681",
+          "session": "NORMAL",
+          "record_index": 377
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T13:03:13.473865",
+          "session": "NORMAL",
+          "record_index": 378
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T13:03:19.866028",
+          "session": "NORMAL",
+          "record_index": 379
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T13:03:26.271899",
+          "session": "NORMAL",
+          "record_index": 380
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T13:03:32.713790",
+          "session": "NORMAL",
+          "record_index": 381
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T13:03:38.992401",
+          "session": "NORMAL",
+          "record_index": 382
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T13:03:45.281527",
+          "session": "NORMAL",
+          "record_index": 383
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T13:08:51.589400",
+          "session": "NORMAL",
+          "record_index": 384
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T13:08:57.992150",
+          "session": "NORMAL",
+          "record_index": 385
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T13:09:04.317404",
+          "session": "NORMAL",
+          "record_index": 386
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T13:09:10.758126",
+          "session": "NORMAL",
+          "record_index": 387
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T13:09:17.188136",
+          "session": "NORMAL",
+          "record_index": 388
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T13:09:24.483550",
+          "session": "NORMAL",
+          "record_index": 389
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T13:09:30.861904",
+          "session": "NORMAL",
+          "record_index": 390
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T13:09:37.225083",
+          "session": "NORMAL",
+          "record_index": 391
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T13:14:43.654954",
+          "session": "NORMAL",
+          "record_index": 392
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T13:14:49.981724",
+          "session": "NORMAL",
+          "record_index": 393
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T13:14:56.379795",
+          "session": "NORMAL",
+          "record_index": 394
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T13:15:02.837013",
+          "session": "NORMAL",
+          "record_index": 395
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T13:15:09.311647",
+          "session": "NORMAL",
+          "record_index": 396
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T13:15:15.725348",
+          "session": "NORMAL",
+          "record_index": 397
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T13:15:22.716016",
+          "session": "NORMAL",
+          "record_index": 398
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T13:15:29.117878",
+          "session": "NORMAL",
+          "record_index": 399
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T13:20:35.468035",
+          "session": "NORMAL",
+          "record_index": 400
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T13:20:41.796980",
+          "session": "NORMAL",
+          "record_index": 401
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T13:20:48.154563",
+          "session": "NORMAL",
+          "record_index": 402
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T13:20:54.514002",
+          "session": "NORMAL",
+          "record_index": 403
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T13:21:00.838419",
+          "session": "NORMAL",
+          "record_index": 404
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T13:21:07.156697",
+          "session": "NORMAL",
+          "record_index": 405
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T13:21:13.531008",
+          "session": "NORMAL",
+          "record_index": 406
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T13:21:20.002435",
+          "session": "NORMAL",
+          "record_index": 407
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T13:26:26.324124",
+          "session": "NORMAL",
+          "record_index": 408
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T13:26:32.615137",
+          "session": "NORMAL",
+          "record_index": 409
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T13:26:38.812074",
+          "session": "NORMAL",
+          "record_index": 410
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T13:26:45.230367",
+          "session": "NORMAL",
+          "record_index": 411
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T13:26:52.402161",
+          "session": "NORMAL",
+          "record_index": 412
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T13:26:58.695005",
+          "session": "NORMAL",
+          "record_index": 413
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T13:27:05.043475",
+          "session": "NORMAL",
+          "record_index": 414
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T13:27:11.491247",
+          "session": "NORMAL",
+          "record_index": 415
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T13:32:17.800585",
+          "session": "NORMAL",
+          "record_index": 416
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T13:32:24.046770",
+          "session": "NORMAL",
+          "record_index": 417
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T13:32:30.405227",
+          "session": "NORMAL",
+          "record_index": 418
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T13:32:37.033366",
+          "session": "NORMAL",
+          "record_index": 419
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T13:32:43.274644",
+          "session": "NORMAL",
+          "record_index": 420
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T13:32:49.624581",
+          "session": "NORMAL",
+          "record_index": 421
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T13:32:55.908497",
+          "session": "NORMAL",
+          "record_index": 422
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T13:33:02.176913",
+          "session": "NORMAL",
+          "record_index": 423
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T13:38:08.508335",
+          "session": "NORMAL",
+          "record_index": 424
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T13:38:14.779719",
+          "session": "NORMAL",
+          "record_index": 425
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T13:38:21.007866",
+          "session": "NORMAL",
+          "record_index": 426
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T13:38:27.392879",
+          "session": "NORMAL",
+          "record_index": 427
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T13:38:33.589707",
+          "session": "NORMAL",
+          "record_index": 428
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T13:38:39.873949",
+          "session": "NORMAL",
+          "record_index": 429
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T13:38:45.984224",
+          "session": "NORMAL",
+          "record_index": 430
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T13:38:52.145163",
+          "session": "NORMAL",
+          "record_index": 431
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T13:43:58.216390",
+          "session": "NORMAL",
+          "record_index": 432
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T13:44:04.463121",
+          "session": "NORMAL",
+          "record_index": 433
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T13:44:10.750173",
+          "session": "NORMAL",
+          "record_index": 434
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T13:44:16.812512",
+          "session": "NORMAL",
+          "record_index": 435
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T13:44:23.035714",
+          "session": "NORMAL",
+          "record_index": 436
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T13:44:29.101344",
+          "session": "NORMAL",
+          "record_index": 437
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T13:44:35.141543",
+          "session": "NORMAL",
+          "record_index": 438
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T13:44:41.229783",
+          "session": "NORMAL",
+          "record_index": 439
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T13:49:47.404384",
+          "session": "NORMAL",
+          "record_index": 440
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T13:49:53.818764",
+          "session": "NORMAL",
+          "record_index": 441
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T13:49:59.921956",
+          "session": "NORMAL",
+          "record_index": 442
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T13:50:06.052445",
+          "session": "NORMAL",
+          "record_index": 443
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T13:50:12.429078",
+          "session": "NORMAL",
+          "record_index": 444
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T13:50:18.699816",
+          "session": "NORMAL",
+          "record_index": 445
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T13:50:24.733920",
+          "session": "NORMAL",
+          "record_index": 446
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T13:50:30.689598",
+          "session": "NORMAL",
+          "record_index": 447
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T13:55:36.928957",
+          "session": "NORMAL",
+          "record_index": 448
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T13:55:43.037390",
+          "session": "NORMAL",
+          "record_index": 449
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T13:55:49.104077",
+          "session": "NORMAL",
+          "record_index": 450
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T13:55:55.545787",
+          "session": "NORMAL",
+          "record_index": 451
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T13:56:01.727084",
+          "session": "NORMAL",
+          "record_index": 452
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T13:56:07.995996",
+          "session": "NORMAL",
+          "record_index": 453
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T13:56:14.127695",
+          "session": "NORMAL",
+          "record_index": 454
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T13:56:20.128495",
+          "session": "NORMAL",
+          "record_index": 455
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T14:01:26.070593",
+          "session": "NORMAL",
+          "record_index": 456
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T14:01:32.055215",
+          "session": "NORMAL",
+          "record_index": 457
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T14:01:38.018356",
+          "session": "NORMAL",
+          "record_index": 458
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T14:01:44.056724",
+          "session": "NORMAL",
+          "record_index": 459
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T14:01:50.125247",
+          "session": "NORMAL",
+          "record_index": 460
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T14:01:56.048743",
+          "session": "NORMAL",
+          "record_index": 461
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T14:02:02.045678",
+          "session": "NORMAL",
+          "record_index": 462
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T14:02:08.027610",
+          "session": "NORMAL",
+          "record_index": 463
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T14:07:14.018310",
+          "session": "NORMAL",
+          "record_index": 464
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T14:07:20.112217",
+          "session": "NORMAL",
+          "record_index": 465
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T14:07:26.134416",
+          "session": "NORMAL",
+          "record_index": 466
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T14:07:32.101145",
+          "session": "NORMAL",
+          "record_index": 467
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T14:07:38.075706",
+          "session": "NORMAL",
+          "record_index": 468
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T14:07:43.994175",
+          "session": "NORMAL",
+          "record_index": 469
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T14:07:50.089856",
+          "session": "NORMAL",
+          "record_index": 470
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T14:07:56.038137",
+          "session": "NORMAL",
+          "record_index": 471
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T14:13:02.030277",
+          "session": "NORMAL",
+          "record_index": 472
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T14:13:08.010377",
+          "session": "NORMAL",
+          "record_index": 473
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T14:13:14.080187",
+          "session": "NORMAL",
+          "record_index": 474
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T14:13:20.168634",
+          "session": "NORMAL",
+          "record_index": 475
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T14:13:26.222114",
+          "session": "NORMAL",
+          "record_index": 476
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T14:13:32.227435",
+          "session": "NORMAL",
+          "record_index": 477
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T14:13:38.196741",
+          "session": "NORMAL",
+          "record_index": 478
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T14:13:44.241642",
+          "session": "NORMAL",
+          "record_index": 479
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T14:18:50.204351",
+          "session": "NORMAL",
+          "record_index": 480
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T14:18:56.236445",
+          "session": "NORMAL",
+          "record_index": 481
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T14:19:02.221473",
+          "session": "NORMAL",
+          "record_index": 482
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T14:19:08.214509",
+          "session": "NORMAL",
+          "record_index": 483
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T14:19:14.198392",
+          "session": "NORMAL",
+          "record_index": 484
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T14:19:20.114553",
+          "session": "NORMAL",
+          "record_index": 485
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T14:19:26.104273",
+          "session": "NORMAL",
+          "record_index": 486
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T14:19:32.263709",
+          "session": "NORMAL",
+          "record_index": 487
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T14:24:38.268543",
+          "session": "NORMAL",
+          "record_index": 488
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T14:24:44.271294",
+          "session": "NORMAL",
+          "record_index": 489
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T14:24:50.224801",
+          "session": "NORMAL",
+          "record_index": 490
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T14:24:56.394857",
+          "session": "NORMAL",
+          "record_index": 491
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T14:25:02.433370",
+          "session": "NORMAL",
+          "record_index": 492
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T14:25:08.427868",
+          "session": "NORMAL",
+          "record_index": 493
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T14:25:14.339181",
+          "session": "NORMAL",
+          "record_index": 494
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T14:25:20.454977",
+          "session": "NORMAL",
+          "record_index": 495
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T14:30:26.487734",
+          "session": "NORMAL",
+          "record_index": 496
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T14:30:32.432410",
+          "session": "NORMAL",
+          "record_index": 497
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T14:30:38.366381",
+          "session": "NORMAL",
+          "record_index": 498
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T14:30:44.346584",
+          "session": "NORMAL",
+          "record_index": 499
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T14:30:50.413067",
+          "session": "NORMAL",
+          "record_index": 500
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T14:30:56.467093",
+          "session": "NORMAL",
+          "record_index": 501
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T14:31:02.493019",
+          "session": "NORMAL",
+          "record_index": 502
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T14:31:08.579031",
+          "session": "NORMAL",
+          "record_index": 503
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T14:36:14.592044",
+          "session": "NORMAL",
+          "record_index": 504
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T14:36:20.569628",
+          "session": "NORMAL",
+          "record_index": 505
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T14:36:26.504712",
+          "session": "NORMAL",
+          "record_index": 506
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T14:36:32.485114",
+          "session": "NORMAL",
+          "record_index": 507
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T14:36:38.467323",
+          "session": "NORMAL",
+          "record_index": 508
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T14:36:44.510609",
+          "session": "NORMAL",
+          "record_index": 509
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T14:36:50.695400",
+          "session": "NORMAL",
+          "record_index": 510
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T14:36:56.650287",
+          "session": "NORMAL",
+          "record_index": 511
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T14:42:02.645769",
+          "session": "NORMAL",
+          "record_index": 512
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T14:42:08.637716",
+          "session": "NORMAL",
+          "record_index": 513
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T14:42:14.811431",
+          "session": "NORMAL",
+          "record_index": 514
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T14:42:20.849722",
+          "session": "NORMAL",
+          "record_index": 515
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T14:42:26.780897",
+          "session": "NORMAL",
+          "record_index": 516
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T14:42:32.811682",
+          "session": "NORMAL",
+          "record_index": 517
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T14:42:38.789574",
+          "session": "NORMAL",
+          "record_index": 518
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T14:42:44.781442",
+          "session": "NORMAL",
+          "record_index": 519
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T14:47:50.885098",
+          "session": "NORMAL",
+          "record_index": 520
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T14:47:56.987429",
+          "session": "NORMAL",
+          "record_index": 521
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T14:48:02.979020",
+          "session": "NORMAL",
+          "record_index": 522
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T14:48:09.014204",
+          "session": "NORMAL",
+          "record_index": 523
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T14:48:15.005632",
+          "session": "NORMAL",
+          "record_index": 524
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T14:48:20.928207",
+          "session": "NORMAL",
+          "record_index": 525
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T14:48:26.890307",
+          "session": "NORMAL",
+          "record_index": 526
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T14:48:32.939268",
+          "session": "NORMAL",
+          "record_index": 527
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T14:53:38.900896",
+          "session": "NORMAL",
+          "record_index": 528
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T14:53:44.841160",
+          "session": "NORMAL",
+          "record_index": 529
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T14:53:50.853777",
+          "session": "NORMAL",
+          "record_index": 530
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T14:53:56.798932",
+          "session": "NORMAL",
+          "record_index": 531
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T14:54:02.774483",
+          "session": "NORMAL",
+          "record_index": 532
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T14:54:09.009845",
+          "session": "NORMAL",
+          "record_index": 533
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T14:54:14.914937",
+          "session": "NORMAL",
+          "record_index": 534
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T14:54:20.816692",
+          "session": "NORMAL",
+          "record_index": 535
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T14:59:26.747908",
+          "session": "NORMAL",
+          "record_index": 536
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T14:59:32.671629",
+          "session": "NORMAL",
+          "record_index": 537
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T14:59:38.603264",
+          "session": "NORMAL",
+          "record_index": 538
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T14:59:44.526446",
+          "session": "NORMAL",
+          "record_index": 539
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T14:59:50.668302",
+          "session": "NORMAL",
+          "record_index": 540
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T14:59:56.755964",
+          "session": "NORMAL",
+          "record_index": 541
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T15:00:02.999471",
+          "session": "NORMAL",
+          "record_index": 542
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T15:00:08.916276",
+          "session": "NORMAL",
+          "record_index": 543
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T15:05:14.922012",
+          "session": "NORMAL",
+          "record_index": 544
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T15:05:21.013057",
+          "session": "NORMAL",
+          "record_index": 545
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T15:05:26.963536",
+          "session": "NORMAL",
+          "record_index": 546
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T15:05:32.924259",
+          "session": "NORMAL",
+          "record_index": 547
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T15:05:38.932911",
+          "session": "NORMAL",
+          "record_index": 548
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T15:05:45.030565",
+          "session": "NORMAL",
+          "record_index": 549
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T15:05:51.141123",
+          "session": "NORMAL",
+          "record_index": 550
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T15:05:57.107013",
+          "session": "NORMAL",
+          "record_index": 551
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T15:11:03.276971",
+          "session": "NORMAL",
+          "record_index": 552
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T15:11:09.278997",
+          "session": "NORMAL",
+          "record_index": 553
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T15:11:15.270747",
+          "session": "NORMAL",
+          "record_index": 554
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T15:11:21.312988",
+          "session": "NORMAL",
+          "record_index": 555
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T15:11:27.246482",
+          "session": "NORMAL",
+          "record_index": 556
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T15:11:33.252968",
+          "session": "NORMAL",
+          "record_index": 557
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T15:11:39.235209",
+          "session": "NORMAL",
+          "record_index": 558
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T15:11:45.259202",
+          "session": "NORMAL",
+          "record_index": 559
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T15:16:51.334906",
+          "session": "NORMAL",
+          "record_index": 560
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T15:16:57.307976",
+          "session": "NORMAL",
+          "record_index": 561
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T15:17:03.308454",
+          "session": "NORMAL",
+          "record_index": 562
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T15:17:09.252483",
+          "session": "NORMAL",
+          "record_index": 563
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T15:17:15.265747",
+          "session": "NORMAL",
+          "record_index": 564
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T15:17:21.236816",
+          "session": "NORMAL",
+          "record_index": 565
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T15:17:27.222762",
+          "session": "NORMAL",
+          "record_index": 566
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T15:17:33.416566",
+          "session": "NORMAL",
+          "record_index": 567
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T15:22:39.506683",
+          "session": "NORMAL",
+          "record_index": 568
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T15:22:45.521656",
+          "session": "NORMAL",
+          "record_index": 569
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T15:22:51.808946",
+          "session": "NORMAL",
+          "record_index": 570
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T15:22:57.876392",
+          "session": "NORMAL",
+          "record_index": 571
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T15:23:03.880733",
+          "session": "NORMAL",
+          "record_index": 572
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T15:23:09.840336",
+          "session": "NORMAL",
+          "record_index": 573
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T15:23:15.789052",
+          "session": "NORMAL",
+          "record_index": 574
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T15:23:21.714675",
+          "session": "NORMAL",
+          "record_index": 575
+        },
+        {
+          "stock": "005930",
+          "time": "2026-01-05T15:28:27.758961",
+          "session": "NORMAL",
+          "record_index": 576
+        },
+        {
+          "stock": "000660",
+          "time": "2026-01-05T15:28:33.701837",
+          "session": "NORMAL",
+          "record_index": 577
+        },
+        {
+          "stock": "008350",
+          "time": "2026-01-05T15:28:39.694914",
+          "session": "NORMAL",
+          "record_index": 578
+        },
+        {
+          "stock": "900270",
+          "time": "2026-01-05T15:28:45.621643",
+          "session": "NORMAL",
+          "record_index": 579
+        },
+        {
+          "stock": "049630",
+          "time": "2026-01-05T15:28:51.676039",
+          "session": "NORMAL",
+          "record_index": 580
+        },
+        {
+          "stock": "191410",
+          "time": "2026-01-05T15:28:57.674578",
+          "session": "NORMAL",
+          "record_index": 581
+        },
+        {
+          "stock": "936300",
+          "time": "2026-01-05T15:29:03.728016",
+          "session": "NORMAL",
+          "record_index": 582
+        },
+        {
+          "stock": "348370",
+          "time": "2026-01-05T15:29:09.742795",
+          "session": "NORMAL",
+          "record_index": 583
+        }
+      ],
+      "triggered_cycle": [
+        {
+          "stock": "005930",
+          "start_time": "2026-01-05T09:00:08.720909",
+          "start_time_str": "2026-01-05T09:00:08.720909",
+          "start_record_index": 0,
+          "start_session": "OPEN",
+          "trigger_type": "observer_triggered",
+          "records_in_cycle": 73,
+          "end_time": "2026-01-05T15:29:09.742795",
+          "end_time_str": "2026-01-05T15:29:09.742795",
+          "exit_type": "timeout",
+          "end_reason": "session_end"
+        },
+        {
+          "stock": "000660",
+          "start_time": "2026-01-05T09:00:15.799665",
+          "start_time_str": "2026-01-05T09:00:15.799665",
+          "start_record_index": 1,
+          "start_session": "OPEN",
+          "trigger_type": "observer_triggered",
+          "records_in_cycle": 73,
+          "end_time": "2026-01-05T15:29:09.742795",
+          "end_time_str": "2026-01-05T15:29:09.742795",
+          "exit_type": "timeout",
+          "end_reason": "session_end"
+        },
+        {
+          "stock": "008350",
+          "start_time": "2026-01-05T09:00:22.070351",
+          "start_time_str": "2026-01-05T09:00:22.070351",
+          "start_record_index": 2,
+          "start_session": "OPEN",
+          "trigger_type": "observer_triggered",
+          "records_in_cycle": 73,
+          "end_time": "2026-01-05T15:29:09.742795",
+          "end_time_str": "2026-01-05T15:29:09.742795",
+          "exit_type": "timeout",
+          "end_reason": "session_end"
+        },
+        {
+          "stock": "900270",
+          "start_time": "2026-01-05T09:00:29.333712",
+          "start_time_str": "2026-01-05T09:00:29.333712",
+          "start_record_index": 3,
+          "start_session": "OPEN",
+          "trigger_type": "observer_triggered",
+          "records_in_cycle": 73,
+          "end_time": "2026-01-05T15:29:09.742795",
+          "end_time_str": "2026-01-05T15:29:09.742795",
+          "exit_type": "timeout",
+          "end_reason": "session_end"
+        },
+        {
+          "stock": "049630",
+          "start_time": "2026-01-05T09:00:35.913268",
+          "start_time_str": "2026-01-05T09:00:35.913268",
+          "start_record_index": 4,
+          "start_session": "OPEN",
+          "trigger_type": "observer_triggered",
+          "records_in_cycle": 73,
+          "end_time": "2026-01-05T15:29:09.742795",
+          "end_time_str": "2026-01-05T15:29:09.742795",
+          "exit_type": "timeout",
+          "end_reason": "session_end"
+        },
+        {
+          "stock": "191410",
+          "start_time": "2026-01-05T09:00:42.421948",
+          "start_time_str": "2026-01-05T09:00:42.421948",
+          "start_record_index": 5,
+          "start_session": "OPEN",
+          "trigger_type": "observer_triggered",
+          "records_in_cycle": 73,
+          "end_time": "2026-01-05T15:29:09.742795",
+          "end_time_str": "2026-01-05T15:29:09.742795",
+          "exit_type": "timeout",
+          "end_reason": "session_end"
+        },
+        {
+          "stock": "936300",
+          "start_time": "2026-01-05T09:00:48.840568",
+          "start_time_str": "2026-01-05T09:00:48.840568",
+          "start_record_index": 6,
+          "start_session": "OPEN",
+          "trigger_type": "observer_triggered",
+          "records_in_cycle": 73,
+          "end_time": "2026-01-05T15:29:09.742795",
+          "end_time_str": "2026-01-05T15:29:09.742795",
+          "exit_type": "timeout",
+          "end_reason": "session_end"
+        },
+        {
+          "stock": "348370",
+          "start_time": "2026-01-05T09:00:55.511052",
+          "start_time_str": "2026-01-05T09:00:55.511052",
+          "start_record_index": 7,
+          "start_session": "OPEN",
+          "trigger_type": "observer_triggered",
+          "records_in_cycle": 73,
+          "end_time": "2026-01-05T15:29:09.742795",
+          "end_time_str": "2026-01-05T15:29:09.742795",
+          "exit_type": "timeout",
+          "end_reason": "session_end"
+        }
+      ],
+      "open_cycles_count": 8,
+      "cycle_summary": [
+        {
+          "cycle_id": "2026-01-05-005930-01",
+          "stock": "005930",
+          "start_time": "2026-01-05T09:00:08.720909",
+          "end_time": "2026-01-05T15:29:09.742795",
+          "duration_sec": 23341,
+          "exit_type": "timeout"
+        },
+        {
+          "cycle_id": "2026-01-05-000660-02",
+          "stock": "000660",
+          "start_time": "2026-01-05T09:00:15.799665",
+          "end_time": "2026-01-05T15:29:09.742795",
+          "duration_sec": 23333,
+          "exit_type": "timeout"
+        },
+        {
+          "cycle_id": "2026-01-05-008350-03",
+          "stock": "008350",
+          "start_time": "2026-01-05T09:00:22.070351",
+          "end_time": "2026-01-05T15:29:09.742795",
+          "duration_sec": 23327,
+          "exit_type": "timeout"
+        },
+        {
+          "cycle_id": "2026-01-05-900270-04",
+          "stock": "900270",
+          "start_time": "2026-01-05T09:00:29.333712",
+          "end_time": "2026-01-05T15:29:09.742795",
+          "duration_sec": 23320,
+          "exit_type": "timeout"
+        },
+        {
+          "cycle_id": "2026-01-05-049630-05",
+          "stock": "049630",
+          "start_time": "2026-01-05T09:00:35.913268",
+          "end_time": "2026-01-05T15:29:09.742795",
+          "duration_sec": 23313,
+          "exit_type": "timeout"
+        },
+        {
+          "cycle_id": "2026-01-05-191410-06",
+          "stock": "191410",
+          "start_time": "2026-01-05T09:00:42.421948",
+          "end_time": "2026-01-05T15:29:09.742795",
+          "duration_sec": 23307,
+          "exit_type": "timeout"
+        },
+        {
+          "cycle_id": "2026-01-05-936300-07",
+          "stock": "936300",
+          "start_time": "2026-01-05T09:00:48.840568",
+          "end_time": "2026-01-05T15:29:09.742795",
+          "duration_sec": 23300,
+          "exit_type": "timeout"
+        },
+        {
+          "cycle_id": "2026-01-05-348370-08",
+          "stock": "348370",
+          "start_time": "2026-01-05T09:00:55.511052",
+          "end_time": "2026-01-05T15:29:09.742795",
+          "duration_sec": 23294,
+          "exit_type": "timeout"
+        }
+      ],
+      "triggered_cycles_count": 8
+    },
+    "box_summary": {
+      "formed_count": 0,
+      "formed_stocks": []
+    },
+    "base_candle_summary": {
+      "exists_count": 0,
+      "exists_stocks": []
+    },
+    "session_distribution": {
+      "OPEN": 88,
+      "NORMAL": 496
+    },
+    "no_event_reasons": {}
+  },
+  "reason_stats": {
+    "by_bucket": {
+      "largecap": {
+        "count": 2,
+        "stocks": [
+          {
+            "symbol": "005930",
+            "score": 1.0,
+            "reason": {
+              "manual_selection": true,
+              "close": 0.0,
+              "turnover_krw": 0.0
+            }
+          },
+          {
+            "symbol": "000660",
+            "score": 1.0,
+            "reason": {
+              "manual_selection": true,
+              "close": 0.0,
+              "turnover_krw": 0.0
+            }
+          }
+        ],
+        "avg_score": 1.0
+      },
+      "volume": {
+        "count": 2,
+        "stocks": [
+          {
+            "symbol": "008350",
+            "score": 0.8,
+            "reason": {
+              "manual_selection": true,
+              "close": 0.0,
+              "turnover_krw": 0.0
+            }
+          },
+          {
+            "symbol": "900270",
+            "score": 0.8,
+            "reason": {
+              "manual_selection": true,
+              "close": 0.0,
+              "turnover_krw": 0.0
+            }
+          }
+        ],
+        "avg_score": 0.8
+      },
+      "structure": {
+        "count": 2,
+        "stocks": [
+          {
+            "symbol": "049630",
+            "score": 0.8,
+            "reason": {
+              "manual_selection": true,
+              "close": 0.0,
+              "turnover_krw": 0.0
+            }
+          },
+          {
+            "symbol": "191410",
+            "score": 0.8,
+            "reason": {
+              "manual_selection": true,
+              "close": 0.0,
+              "turnover_krw": 0.0
+            }
+          }
+        ],
+        "avg_score": 0.8
+      },
+      "theme": {
+        "count": 2,
+        "stocks": [
+          {
+            "symbol": "936300",
+            "score": 0.8,
+            "reason": {
+              "manual_selection": true,
+              "close": 0.0,
+              "turnover_krw": 0.0
+            }
+          },
+          {
+            "symbol": "348370",
+            "score": 0.8,
+            "reason": {
+              "manual_selection": true,
+              "close": 0.0,
+              "turnover_krw": 0.0
+            }
+          }
+        ],
+        "avg_score": 0.8
+      }
+    },
+    "top_reasons": [],
+    "watchlist_loaded": true
+  },
+  "market_character": {
+    "date": "2026-01-05",
+    "total_scouts": 584,
+    "trigger_rate": 100.0,
+    "box_rate": 0.0,
+    "active_stocks": 8,
+    "session_distribution": {
+      "OPEN": 88,
+      "NORMAL": 496
+    },
+    "character": "ACTIVE",
+    "description": "활발한 시장: Observer 트리거 비율이 높음. 기회가 많은 날로 판단됨. Box 형성 비율이 낮아 패턴 형성이 부족함."
+  },
+  "top_100_available": false
+}

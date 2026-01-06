@@ -1,7 +1,14 @@
 # ===============================
 # test/scout_bot/day_main.py
 # ===============================
+import sys
+import os
 import asyncio
+
+# 프로젝트 루트를 Python 경로에 추가
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+sys.path.insert(0, PROJECT_ROOT)
+
 from test.framework.engine.day_controller import DayController
 
 if __name__ == "__main__":

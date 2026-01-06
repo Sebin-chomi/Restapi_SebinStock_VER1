@@ -467,3 +467,9 @@ class ModelManager:
         """종목 점수 조회"""
         return self.scoring_model.predict(features)
 
+
+
+
+
+
+

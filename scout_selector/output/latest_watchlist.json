@@ -1,0 +1,27 @@
+{
+  "date": "20260105",
+  "phase": "warmup",
+  "largecap": [
+    {
+      "symbol": "005930",
+      "bucket": "largecap",
+      "score": 1.0,
+      "reason": {
+        "close": 0.0,
+        "turnover_krw": 0.0
+      }
+    },
+    {
+      "symbol": "000660",
+      "bucket": "largecap",
+      "score": 1.0,
+      "reason": {
+        "close": 0.0,
+        "turnover_krw": 0.0
+      }
+    }
+  ],
+  "volume": [],
+  "structure": [],
+  "theme": []
+}
