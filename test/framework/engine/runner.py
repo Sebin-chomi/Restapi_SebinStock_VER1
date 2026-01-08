@@ -27,6 +27,12 @@ from test.framework.collector.flow_collector import collect_flow_snapshot
 from test.price_api import get_current_price
 from test.strategy_state import get_state
 
+# 🔽 [추가] 이벤트 시스템
+from test.scout_bot.events.data_collector import EventDataCollector
+from test.scout_bot.events.detector import EventDetector
+from test.scout_bot.events.cooldown import CooldownManager
+from test.scout_bot.events.sink import emit_event
+
 
 class MainApp:
     def __init__(self):
@@ -38,6 +44,11 @@ class MainApp:
         
         # 🔹 이전 snapshot 저장 (고가/저가 갱신 판단용)
         self._prev_snapshots = {}  # {stock_code: {"high": float, "low": float}}
+        
+        # 🔹 [추가] 이벤트 시스템
+        self._event_data_collector = None
+        self._event_detector = None
+        self._cooldown_manager = CooldownManager()
 
     def _build_snapshot(self, stk: str, token: str):
         """가격/상태 스냅샷 (실제 가격 정보 수집)"""
@@ -152,6 +163,18 @@ class MainApp:
         if not self.token:
             self.token = get_token()
             self.account_state = AccountState(self.token)
+            
+            # 🔹 [추가] 이벤트 시스템 초기화 (설정 파일 로드)
+            try:
+                from test.scout_bot.config.loaders import load_event_thresholds
+                thresholds = load_event_thresholds()
+            except Exception:
+                # 로드 실패 시 기본값 사용
+                from test.scout_bot.config.loaders import DEFAULT_THRESHOLDS
+                thresholds = DEFAULT_THRESHOLDS.copy()
+            
+            self._event_data_collector = EventDataCollector(self.token, thresholds)
+            self._event_detector = EventDetector(self._event_data_collector, thresholds)
 
         # 🔹 대형주 + 동적 watchlist 병합
         watchlist = list(dict.fromkeys(self.large_caps + get_watchlist()))
@@ -214,3 +237,25 @@ class MainApp:
             )
 
             save_scout_record(record)
+            
+            # 🔹 [추가] 이벤트 감지 및 출력
+            try:
+                # 이벤트 감지 (데이터 부족 시 조용히 스킵)
+                detected_events = self._event_detector.detect_events(stk, debug=False)
+                for event in detected_events:
+                    # 쿨다운 체크
+                    if not self._cooldown_manager.is_cooldown(stk, event.event_type):
+                        # 이벤트 출력 (JSONL + 텔레그램)
+                        emit_event(event)
+                        # 쿨다운 기록
+                        self._cooldown_manager.record_event(
+                            stk, event.event_type, event.occurred_at
+                        )
+                
+                # 만료된 쿨다운 정리 (주기적으로)
+                if len(self._cooldown_manager._cooldown_map) > 100:
+                    self._cooldown_manager.cleanup_expired()
+            except Exception as e:
+                # 예외 발생 시 조용히 스킵 (프로그램 중단 방지)
+                # 디버그 모드일 때만 로그 출력
+                pass

@@ -2,7 +2,7 @@
 
 신호 수집 모듈
 
-조건식/뉴스를 수집하여 `scout_selector/input/` 에 JSON 파일로 저장합니다.
+조건식/뉴스를 수집하여 `gatekeeper_bot/input/` 에 JSON 파일로 저장합니다.
 
 ---
 
@@ -47,7 +47,7 @@ python signals_collector/run_collect.py --conditions "AI_관련주" "거래량_�
 
 **수집기**: `collectors/condition_kiwoom.py`
 
-**출력**: `scout_selector/input/conditions/conditions_YYYYMMDD.json`
+**출력**: `gatekeeper_bot/input/conditions/conditions_YYYYMMDD.json`
 
 **기능**:
 - 키움 API에서 조건식 목록 조회
@@ -60,7 +60,7 @@ python signals_collector/run_collect.py --conditions "AI_관련주" "거래량_�
 
 **수집기**: `collectors/news_provider.py`
 
-**출력**: `scout_selector/input/news/news_YYYYMMDD.json`
+**출력**: `gatekeeper_bot/input/news/news_YYYYMMDD.json`
 
 **기능**:
 - 뉴스 API에서 종목별 뉴스 수집
@@ -82,10 +82,10 @@ python signals_collector/run_collect.py --conditions "AI_관련주" "거래량_�
     ↓
 signals_collector/run_collect.py 실행
     ↓
-scout_selector/input/conditions/*.json 생성
-scout_selector/input/news/*.json 생성
+gatekeeper_bot/input/conditions/*.json 생성
+gatekeeper_bot/input/news/*.json 생성
     ↓
-scout_selector/runner.py 실행
+gatekeeper_bot/runner.py 실행
     ↓
 theme_score_map 생성
 watchlist_YYYYMMDD.json 출력
@@ -164,8 +164,8 @@ collect_news(output_dir, date, use_api=True, api_config={...})
 
 ## 🔗 관련 모듈
 
-- **scout_selector/theme_score_builder.py**: 수집된 JSON을 읽어서 theme_score_map 생성
-- **scout_selector/runner.py**: theme_score_map을 사용하여 watchlist 생성
+- **gatekeeper_bot/theme_score_builder.py**: 수집된 JSON을 읽어서 theme_score_map 생성
+- **gatekeeper_bot/runner.py**: theme_score_map을 사용하여 watchlist 생성
 
 ---
 
@@ -173,7 +173,7 @@ collect_news(output_dir, date, use_api=True, api_config={...})
 
 1. **오늘 날짜만 저장**: 수집기는 오늘 날짜 파일만 생성합니다
 2. **과거 파일 자동 이동**: `theme_score_builder`가 과거 파일을 `history/`로 이동합니다
-3. **독립 모듈**: 수집기는 `scout_selector`나 `scout_bot`을 import하지 않습니다
+3. **독립 모듈**: 수집기는 `gatekeeper_bot`이나 `scout_bot`을 import하지 않습니다
 4. **파일만 쓰기**: 수집기는 파일만 쓰고, selector는 파일만 읽습니다
 5. **텔레그램 알림**: 수집 실패 시 자동으로 텔레그램 알림 전송 (설정 필요)
 

@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "date": "20260107",
+    "created_at": "2026-01-07T20:56:10.763945",
+    "bot_name": "대기실장봇",
+    "bot_version": "1.0.0"
+  },
+  "sources": {
+    "turnover_top": 0,
+    "volume_top": 0,
+    "conditions": 0,
+    "fixed_symbols": 2
+  },
+  "symbols": [
+    "000660",
+    "005930"
+  ]
+}

@@ -5,8 +5,8 @@
 신호 수집 실행 스크립트
 
 장 마감 후 1회 실행 (또는 스케줄)
-- 조건식 수집 → scout_selector/input/conditions/conditions_YYYYMMDD.json
-- 뉴스 수집 → scout_selector/input/news/news_YYYYMMDD.json
+- 조건식 수집 → gatekeeper_bot/input/conditions/conditions_YYYYMMDD.json
+- 뉴스 수집 → gatekeeper_bot/input/news/news_YYYYMMDD.json
 """
 import sys
 from pathlib import Path
@@ -28,7 +28,7 @@ from signals_collector.utils.telegram_notifier import notify_collection_failure
 # ===============================
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-INPUT_DIR = PROJECT_ROOT / "scout_selector" / "input"
+INPUT_DIR = PROJECT_ROOT / "gatekeeper_bot" / "input"
 CONDITIONS_DIR = INPUT_DIR / "conditions"
 NEWS_DIR = INPUT_DIR / "news"
 
@@ -139,7 +139,7 @@ def main(date: str = None, condition_names: list = None):
     print(f"   - {NEWS_DIR / f'news_{date}.json'}")
     print()
     print("💡 다음 단계:")
-    print("   scout_selector/runner.py 실행 → theme_score_map 생성")
+    print("   gatekeeper_bot/runner.py 실행 → theme_score_map 생성")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,13 @@
+{
+  "date": "20260107",
+  "updated_at": "2026-01-07T22:24:28.894862",
+  "source": "telegram",
+  "symbols": [
+    {
+      "symbol": "008350",
+      "added_by": "telegram",
+      "added_at": "2026-01-07T22:24:28.893883",
+      "reason": "/add command"
+    }
+  ]
+}

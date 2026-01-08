@@ -5,7 +5,7 @@
 이 프로젝트는 주식 자동매매를 위한 통합 시스템으로, 다음 주요 컴포넌트로 구성됩니다:
 
 1. **정찰봇 (Scout Bot)**: 시장 관찰 및 패턴 감지
-2. **선정 시스템 (Scout Selector)**: 일일 관찰 종목 선정
+2. **문지기봇 (Gatekeeper Bot)**: 일일 관찰 종목 선정
 3. **Post-Market Analyzer**: 장 마감 후 시장 분석
 4. **자동매매 시스템**: 매수/매도 실행
 
@@ -64,9 +64,16 @@ run_scout_bot.bat
 
 ---
 
-### 2. 선정 시스템 (Scout Selector)
+### 2. 문지기봇 (Gatekeeper Bot)
 
-**위치**: `scout_selector/`
+**위치**: `scout_selector/` (또는 `gatekeeper_bot/`)
+
+**문서**: [문지기봇 문서](./docs/gatekeeper-bot/README.md) 참조
+
+**역할**:
+- 장 마감 후 배치 프로세스로 실행
+- 전 종목 대상 입구 필터 및 1·2차 필터링 수행
+- 정찰봇이 감시할 종목 후보군 생성
 
 **기능**:
 - 매일 자동으로 8종목 선정 (largecap 2 + volume 2 + structure 2 + theme 2)
@@ -76,19 +83,23 @@ run_scout_bot.bat
 
 **실행 방법**:
 ```bash
-# 내일 watchlist 자동 생성
+# 내일 watchlist 자동 생성 (장 마감 후 실행 권장)
 python scout_selector/prepare_tomorrow.py
 
 # 수동 선정
 python scout_selector/manual_select.py
 
-# 직접 실행
+# 직접 실행 (오늘 날짜 기준)
 python scout_selector/runner.py
 ```
 
 **출력 파일**:
-- `scout_selector/output/watchlist_YYYYMMDD.json`
+- `scout_selector/output/watchlist_YYYYMMDD.json` (문지기봇 출력 스냅샷)
 - `scout_selector/output/latest_watchlist.json`
+
+**문서**:
+- [문지기봇 문서](./docs/gatekeeper-bot/README.md)
+- [출력 형식 명세](./scout_selector/output/WATCHLIST_FORMAT_SPEC.md)
 
 **선정 구조**:
 ```json
@@ -184,14 +195,21 @@ Restapi_SebinStock_VER1/
 │   │   ├── record/          # 기록 관리
 │   │   └── watchlist/       # Watchlist 관리
 │   └── config_test.py       # 테스트 환경 설정
-├── scout_selector/          # 선정 시스템
-│   ├── selector.py          # 선정 로직
-│   ├── runner.py            # 실행 스크립트
-│   ├── prepare_tomorrow.py  # 내일 watchlist 생성
-│   ├── manual_select.py     # 수동 선정
+├── scout_selector/          # 문지기봇 (종목 선정 시스템)
+│   ├── selector.py          # 문지기봇 핵심 엔진
+│   ├── runner.py            # 문지기봇 실행 진입점 (오늘)
+│   ├── prepare_tomorrow.py  # 문지기봇 실행 진입점 (내일)
+│   ├── manual_select.py     # 수동 종목 선정
 │   ├── config/
 │   │   └── selector.yaml     # 설정 파일
-│   └── output/              # 출력 파일
+│   ├── output/              # 출력 파일 (watchlist_YYYYMMDD.json)
+│   └── docs/                # 문지기봇 문서 (설계/구현/검증)
+├── docs/                    # 프로젝트 문서 인덱스
+│   ├── README.md            # 문서 인덱스
+│   ├── governance.md        # 문서 거버넌스 가이드
+│   ├── gatekeeper-bot/      # 문지기봇 문서
+│   ├── scout-bot/           # 정찰봇 문서
+│   └── api/                 # API 문서
 ├── records/
 │   ├── scout/               # 정찰 기록 (JSONL)
 │   │   └── YYYY-MM-DD/
@@ -221,9 +239,21 @@ TELEGRAM_BOT_TOKEN = telegram_token
 TELEGRAM_CHAT_ID = telegram_chat_id
 ```
 
-### 선정 시스템 설정
+### 문지기봇 설정
 
 `scout_selector/config/selector.yaml`에서 선정 기준을 설정할 수 있습니다.
+
+---
+
+## 📚 문서
+
+프로젝트의 모든 문서는 [docs/](./docs/README.md) 디렉토리에서 관리됩니다.
+
+- **[문서 인덱스](./docs/README.md)**: 전체 문서 목록
+- **[문서 거버넌스](./docs/governance.md)**: 문서 작성 가이드
+- **[문지기봇 문서](./docs/gatekeeper-bot/README.md)**: 문지기봇 상세 문서
+- **[정찰봇 문서](./docs/scout-bot/README.md)**: 정찰봇 문서
+- **[신호 수집기 문서](./docs/signals-collector/README.md)**: 신호 수집기 문서
 
 ---
 
@@ -231,7 +261,7 @@ TELEGRAM_CHAT_ID = telegram_chat_id
 
 ### 1. 전날 밤 (또는 당일 아침)
 
-**선정 시스템 실행**:
+**문지기봇 실행**:
 ```bash
 python scout_selector/prepare_tomorrow.py
 ```
@@ -241,7 +271,7 @@ python scout_selector/prepare_tomorrow.py
 python scout_selector/manual_select.py
 ```
 
-**결과**: `scout_selector/output/watchlist_YYYYMMDD.json` 생성
+**결과**: `scout_selector/output/watchlist_YYYYMMDD.json` 생성 (문지기봇 출력 스냅샷)
 
 ---
 

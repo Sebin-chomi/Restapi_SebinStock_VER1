@@ -51,52 +51,98 @@ class DayController:
         
         tel_log("SYSTEM", "📡 DayController 시작 (정찰 대기)")
         
-        # 오늘의 watchlist JSON 로드 확인
-        today_watchlist = load_watchlist_from_json()
-        if today_watchlist:
-            tel_log(
-                "WATCHLIST",
-                f"📋 오늘의 watchlist 로드 완료: {len(today_watchlist)} 종목\n{', '.join(today_watchlist[:10])}{'...' if len(today_watchlist) > 10 else ''}"
-            )
+        # 전체 watchlist 로드 (JSON + 수동 추가 + 동적)
+        from test.framework.watchlist.store import get_watchlist
+        from test.framework.watchlist.manual_additions import get_manual_symbols
+        
+        # 각 소스별 종목 수 확인
+        json_watchlist = load_watchlist_from_json()
+        manual_symbols = get_manual_symbols()
+        total_watchlist = get_watchlist()
+        
+        # 알림 메시지 구성
+        if total_watchlist:
+            json_count = len(json_watchlist)
+            manual_count = len(manual_symbols)
+            total_count = len(total_watchlist)
+            
+            msg_parts = [f"📋 Watchlist 로드 완료: 총 {total_count} 종목"]
+            
+            if json_count > 0:
+                msg_parts.append(f"  • 자동 선정: {json_count} 종목")
+            if manual_count > 0:
+                msg_parts.append(f"  • 수동 추가: {manual_count} 종목")
+            
+            msg_parts.append(f"\n종목: {', '.join(total_watchlist[:15])}")
+            if len(total_watchlist) > 15:
+                msg_parts.append(f"... 외 {len(total_watchlist) - 15} 종목")
+            
+            tel_log("WATCHLIST", "\n".join(msg_parts))
         else:
-            tel_log("WATCHLIST", "⚠️  오늘의 watchlist JSON이 없습니다. Cold Start 모드로 진행합니다.")
+            tel_log("WATCHLIST", "⚠️  Watchlist가 비어있습니다. Cold Start 모드로 진행합니다.")
             tel_log("WATCHLIST", "💡 텔레그램 /add 명령어로 종목을 추가할 수 있습니다.")
 
         # 텔레그램 폴링 시작 (백그라운드)
         polling_task = asyncio.create_task(telegram_polling())
 
-        while not MarketHour.is_market_open_time():
-            if DEBUG:
-                print("[DAY HEARTBEAT] WAIT_MARKET")
-            await asyncio.sleep(30)
+        try:
+            while not MarketHour.is_market_open_time():
+                if DEBUG:
+                    print("[DAY HEARTBEAT] WAIT_MARKET")
+                await asyncio.sleep(30)
 
-        market_open_time = datetime.now()
+            market_open_time = datetime.now()
 
-        while MarketHour.is_market_open_time():
-            elapsed = (datetime.now() - market_open_time).total_seconds()
-            is_open_phase = elapsed <= self.open_focus_sec
+            while MarketHour.is_market_open_time():
+                elapsed = (datetime.now() - market_open_time).total_seconds()
+                is_open_phase = elapsed <= self.open_focus_sec
 
-            interval = self.open_interval if is_open_phase else self.base_interval
-            session = "OPEN" if is_open_phase else "NORMAL"
+                interval = self.open_interval if is_open_phase else self.base_interval
+                session = "OPEN" if is_open_phase else "NORMAL"
 
-            if DEBUG:
-                print(f"[DAY HEARTBEAT] {session} (interval={interval}s)")
+                if DEBUG:
+                    print(f"[DAY HEARTBEAT] {session} (interval={interval}s)")
 
-            self.engine.run_once(
-                session=session,
-                interval_min=interval // 60,
+                self.engine.run_once(
+                    session=session,
+                    interval_min=interval // 60,
+                )
+
+                self.total_scout_count += 1
+                await asyncio.sleep(interval)
+
+            # 이벤트 통계 수집
+            event_stats = None
+            try:
+                from test.scout_bot.events.stats import get_daily_event_stats
+                today_date = datetime.now().strftime("%Y%m%d")
+                event_stats = get_daily_event_stats(today_date)
+            except Exception as e:
+                print(f"[WARN] 이벤트 통계 수집 실패: {e}")
+            
+            # 이벤트 발생 횟수 계산
+            event_count = event_stats.get("total_events", 0) if event_stats else 0
+            
+            tel_log(
+                "DAY SUMMARY",
+                format_day_summary(
+                    bot_id=self.bot_id,
+                    total_count=self.total_scout_count,
+                    event_count=event_count,
+                    event_stats=event_stats,
+                ),
             )
 
-            self.total_scout_count += 1
-            await asyncio.sleep(interval)
-
-        tel_log(
-            "DAY SUMMARY",
-            format_day_summary(
-                bot_id=self.bot_id,
-                total_count=self.total_scout_count,
-                event_count=0,
-            ),
-        )
-
-        clear_dynamic()
+            clear_dynamic()
+            
+        except asyncio.CancelledError:
+            # 태스크 취소 시
+            from test.framework.telegram_handler import send_message
+            send_message("🟡 정찰봇 중단됨 (태스크 취소)")
+            raise
+        except Exception as e:
+            # 예외 발생 시
+            from test.framework.telegram_handler import send_message
+            error_msg = f"🔴 정찰봇 오류 발생\n\n{str(e)[:200]}"
+            send_message(error_msg)
+            raise

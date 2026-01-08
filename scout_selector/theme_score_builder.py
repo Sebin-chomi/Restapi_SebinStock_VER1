@@ -1,12 +1,14 @@
 # ===============================
-# scout_selector/theme_score_builder.py
+# gatekeeper_bot/theme_score_builder.py
 # ===============================
 """
-Theme Score Map Builder
+문지기봇 테마 점수 빌더
 
-외부 신호(조건식·뉴스)를 selector가 쓰기 좋은 theme_score_map으로 변환
+역할:
+- 외부 신호(조건식·뉴스)를 theme_score_map으로 변환
+- 문지기봇 핵심 엔진이 사용할 수 있는 형태로 가공
 
-입력: scout_selector/input/conditions/, scout_selector/input/news/
+입력: gatekeeper_bot/input/conditions/, gatekeeper_bot/input/news/
 출력: {symbol: {score: float, sources: List[str]}} 딕셔너리
 """
 from pathlib import Path
@@ -22,7 +24,7 @@ def archive_old_signals(input_dir: Path, date: str, history_dir: Path):
     오늘 날짜가 아닌 파일들을 히스토리 디렉토리로 이동
     
     Args:
-        input_dir: scout_selector/input/ 디렉토리
+        input_dir: gatekeeper_bot/input/ 디렉토리
         date: 오늘 날짜 (YYYYMMDD)
         history_dir: 히스토리 저장 디렉토리
     """
@@ -72,7 +74,7 @@ def build_theme_score_map(
     외부 신호를 theme_score_map으로 변환 (오늘 날짜만 사용)
     
     Args:
-        input_dir: scout_selector/input/ 디렉토리
+        input_dir: gatekeeper_bot/input/ 디렉토리
         date: 날짜 (YYYYMMDD), None이면 오늘
         archive_history: 과거 파일을 히스토리로 이동할지 여부
     

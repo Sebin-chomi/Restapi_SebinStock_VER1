@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "date": "20260108",
+    "created_at": "2026-01-07T15:35:00.123456",
+    "phase": "normal",
+    "gatekeeper_version": "1.0.0",
+    "gatekeeper_bot_version": "1.0.0"
+  },
+  "largecap": [
+    {
+      "symbol": "005930",
+      "category": "largecap",
+      "bucket": "largecap",
+      "score": 1.0,
+      "selection_reason": "대형주 고정 선정 (종가: 75,000원, 거래대금: 1,234,567,890원)",
+      "reason": {
+        "summary": "대형주 고정 선정 (종가: 75,000원, 거래대금: 1,234,567,890원)",
+        "close": 75000.0,
+        "turnover_krw": 1234567890.0
+      },
+      "indicators": {
+        "close": 75000.0,
+        "turnover_krw": 1234567890.0
+      }
+    },
+    {
+      "symbol": "000660",
+      "category": "largecap",
+      "bucket": "largecap",
+      "score": 1.0,
+      "selection_reason": "대형주 고정 선정 (종가: 125,000원, 거래대금: 987,654,321원)",
+      "reason": {
+        "summary": "대형주 고정 선정 (종가: 125,000원, 거래대금: 987,654,321원)",
+        "close": 125000.0,
+        "turnover_krw": 987654321.0
+      },
+      "indicators": {
+        "close": 125000.0,
+        "turnover_krw": 987654321.0
+      }
+    }
+  ],
+  "volume": [
+    {
+      "symbol": "035420",
+      "category": "volume",
+      "bucket": "volume",
+      "score": 0.85,
+      "selection_reason": "거래량형 선정 (거래대금: 5,000,000,000원, 거래량 스파이크: 2.5배, 변동성: 4.2%)",
+      "reason": {
+        "summary": "거래량형 선정 (거래대금: 5,000,000,000원, 거래량 스파이크: 2.5배, 변동성: 4.2%)",
+        "turnover_krw": 5000000000.0,
+        "vol_spike_ratio": 2.5,
+        "hlc_volatility": 0.042
+      },
+      "indicators": {
+        "turnover_krw": 5000000000.0,
+        "vol_spike_ratio": 2.5,
+        "hlc_volatility": 0.042
+      }
+    },
+    {
+      "symbol": "051910",
+      "category": "volume",
+      "bucket": "volume",
+      "score": 0.78,
+      "selection_reason": "거래량형 선정 (거래대금: 4,200,000,000원, 거래량 스파이크: 2.1배, 변동성: 3.8%)",
+      "reason": {
+        "summary": "거래량형 선정 (거래대금: 4,200,000,000원, 거래량 스파이크: 2.1배, 변동성: 3.8%)",
+        "turnover_krw": 4200000000.0,
+        "vol_spike_ratio": 2.1,
+        "hlc_volatility": 0.038
+      },
+      "indicators": {
+        "turnover_krw": 4200000000.0,
+        "vol_spike_ratio": 2.1,
+        "hlc_volatility": 0.038
+      }
+    }
+  ],
+  "structure": [
+    {
+      "symbol": "000270",
+      "category": "structure",
+      "bucket": "structure",
+      "score": 0.75,
+      "structure_score": 72.0,
+      "selection_reason": "구조형 선정 (점수: 72점, MA 정배열, MA 상향 돌파, Higher Low)",
+      "reason": {
+        "summary": "구조형 선정 (점수: 72점, MA 정배열, MA 상향 돌파, Higher Low)",
+        "structure_score": 72.0,
+        "ma_aligned": true,
+        "ma_breakout": true,
+        "higher_low": true,
+        "new_high": false
+      },
+      "indicators": {
+        "structure_score": 72.0,
+        "ma5": 45000.0,
+        "ma20": 44000.0,
+        "ma60": 43000.0,
+        "close": 45500.0
+      }
+    },
+    {
+      "symbol": "035720",
+      "category": "structure",
+      "bucket": "structure",
+      "score": 0.68,
+      "structure_score": 65.0,
+      "selection_reason": "구조형 선정 (점수: 65점, MA 정배열, 고점 갱신)",
+      "reason": {
+        "summary": "구조형 선정 (점수: 65점, MA 정배열, 고점 갱신)",
+        "structure_score": 65.0,
+        "ma_aligned": true,
+        "ma_breakout": false,
+        "higher_low": false,
+        "new_high": true
+      },
+      "indicators": {
+        "structure_score": 65.0,
+        "ma5": 32000.0,
+        "ma20": 31000.0,
+        "ma60": 30000.0,
+        "close": 32500.0
+      }
+    }
+  ],
+  "theme": [
+    {
+      "symbol": "005380",
+      "category": "theme",
+      "bucket": "theme",
+      "score": 0.65,
+      "selection_reason": "테마형 선정 (테마 점수: 1.00, 거래대금: 3,000,000,000원, 출처: condition:AI_관련주, news:AI,검색)",
+      "reason": {
+        "summary": "테마형 선정 (테마 점수: 1.00, 거래대금: 3,000,000,000원, 출처: condition:AI_관련주, news:AI,검색)",
+        "theme_score": 1.0,
+        "turnover_krw": 3000000000.0,
+        "sources": [
+          "condition:AI_관련주",
+          "news:AI,검색"
+        ]
+      },
+      "indicators": {
+        "theme_score": 1.0,
+        "turnover_krw": 3000000000.0,
+        "sources": [
+          "condition:AI_관련주",
+          "news:AI,검색"
+        ]
+      }
+    }
+  ]
+}
+
+

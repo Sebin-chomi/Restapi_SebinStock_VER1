@@ -5,7 +5,7 @@
 키움 조건검색식 수집기
 
 장 마감 후 조건식별 종목 리스트를 수집하여
-scout_selector/input/conditions/conditions_YYYYMMDD.json 생성
+gatekeeper_bot/input/conditions/conditions_YYYYMMDD.json 생성
 """
 import sys
 from pathlib import Path
@@ -146,7 +146,7 @@ def collect_conditions(
     조건식 수집 및 JSON 저장
     
     Args:
-        output_dir: scout_selector/input/conditions/ 디렉토리
+        output_dir: gatekeeper_bot/input/conditions/ 디렉토리
         date: 날짜 (YYYYMMDD)
         condition_names: 수집할 조건식 이름 리스트 (None이면 모든 조건식)
         get_token_func: 토큰 획득 함수 (None이면 test 모듈에서 자동 탐색)

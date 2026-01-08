@@ -1,7 +1,19 @@
 # ===============================
-# scout_selector/prepare_tomorrow.py
-# 내일 사용할 종목을 지금 선정하는 스크립트
+# gatekeeper_bot/prepare_tomorrow.py
+# 문지기봇 실행 진입점 (내일 종목 선정)
 # ===============================
+"""
+문지기봇 내일 종목 선정 스크립트
+
+역할:
+- 장 마감 후 배치 프로세스로 실행
+- 내일 날짜 기준으로 종목 선정
+- 정찰봇이 다음 거래일에 사용할 watchlist_YYYYMMDD.json 생성
+
+실행 시점:
+- 장 마감 후 (15:30 이후) 자동 실행 권장
+- 또는 수동 실행
+"""
 from __future__ import annotations
 
 import json
@@ -64,6 +76,16 @@ def main():
     tomorrow = datetime.now() + timedelta(days=1)
     tomorrow_str = tomorrow.strftime("%Y%m%d")
     
+    # 휴장일 체크 (내일 날짜 기준)
+    from scout_selector.utils.market_calendar import is_market_open
+    
+    if not is_market_open(tomorrow_str):
+        print("=" * 60)
+        print(f"[INFO] Market closed on {tomorrow_str}")
+        print(f"[SKIP] Gatekeeper - market closed")
+        print("=" * 60)
+        sys.exit(0)  # 정상 종료 (오류 아님)
+    
     print(f"\n📅 내일 날짜: {tomorrow_str}")
     
     # 데이터 파일 찾기 (어제 또는 오늘 데이터 사용)
@@ -75,24 +97,23 @@ def main():
             data_files.append((check_file, check_date))
     
     if not data_files:
-        print(f"\n⚠️  데이터 파일을 찾을 수 없습니다.")
-        print(f"   {DATA_DIR}/ohlcv_YYYYMMDD.csv 형식의 파일이 필요합니다.")
-        print(f"\n💡 옵션:")
-        print(f"   1. 어제 데이터 파일을 준비하세요")
-        print(f"   2. 또는 수동으로 종목을 입력하세요 (아래 참고)")
-        return
-    
-    # 가장 최근 데이터 사용
-    data_file, data_date = data_files[0]
-    print(f"📊 사용할 데이터: {data_file.name} ({data_date.strftime('%Y-%m-%d')})")
-    
-    # 데이터 로드
-    df = pd.read_csv(data_file)
-    if "date" in df.columns:
-        df["date"] = pd.to_datetime(df["date"])
-    
-    print(f"   종목 수: {df['symbol'].nunique()} 종목")
-    print(f"   데이터 기간: {df['date'].min()} ~ {df['date'].max()}")
+        # Cold Start: 데이터 파일이 없으면 빈 DataFrame으로 시작 (warmup phase)
+        print(f"\n⚠️  데이터 파일 없음: {DATA_DIR}/ohlcv_YYYYMMDD.csv")
+        print(f"   → Cold Start 모드 (warmup phase)")
+        df = pd.DataFrame(columns=["symbol", "date", "open", "high", "low", "close", "volume", "turnover_krw"])
+    else:
+        # 가장 최근 데이터 사용
+        data_file, data_date = data_files[0]
+        print(f"\n📊 사용할 데이터: {data_file.name} ({data_date.strftime('%Y-%m-%d')})")
+        
+        # 데이터 로드
+        df = pd.read_csv(data_file)
+        if "date" in df.columns:
+            df["date"] = pd.to_datetime(df["date"])
+        
+        print(f"   종목 수: {df['symbol'].nunique()} 종목")
+        if not df.empty and "date" in df.columns:
+            print(f"   데이터 기간: {df['date'].min()} ~ {df['date'].max()}")
     
     # Phase 추론
     phase = infer_phase(df)
@@ -131,12 +152,38 @@ def main():
     
     # 종목 선정
     print(f"\n🔍 종목 선정 중...")
-    result = select_watchlist(
-        df,
-        cfg=CFG,
-        largecap_symbols=LARGECAPS,
-        theme_score_map=theme_score_map,
-    )
+    
+    # Cold Start: 빈 DataFrame이면 최소한의 watchlist 생성
+    if df.empty:
+        print("⚠️  Cold Start: 빈 데이터 → 대형주만 포함")
+        result = {
+            "largecap": [
+                {
+                    "symbol": s,
+                    "category": "largecap",
+                    "bucket": "largecap",
+                    "score": 1.0,
+                    "selection_reason": "Cold Start 모드: 대형주 기본 포함",
+                    "reason": {
+                        "summary": "Cold Start 모드: 대형주 기본 포함",
+                        "close": 0.0,
+                        "turnover_krw": 0.0,
+                    },
+                    "indicators": {},
+                }
+                for s in LARGECAPS
+            ],
+            "volume": [],
+            "structure": [],
+            "theme": [],
+        }
+    else:
+        result = select_watchlist(
+            df,
+            cfg=CFG,
+            largecap_symbols=LARGECAPS,
+            theme_score_map=theme_score_map,
+        )
     
     # 결과 출력
     print(f"\n✅ 선정 완료!")
@@ -156,10 +203,19 @@ def main():
     
     print(f"\n총 {total}종목 선정")
     
-    # 내일 날짜로 JSON 저장
+    # 내일 날짜로 JSON 저장 (출력 데이터 계약 준수)
+    from selector import GATEKEEPER_BOT_VERSION
+    
+    created_at = datetime.now().isoformat()
+    
     output = {
-        "date": tomorrow_str,
-        "phase": phase,
+        "meta": {
+            "date": tomorrow_str,
+            "created_at": created_at,
+            "phase": phase,
+            "gatekeeper_version": GATEKEEPER_BOT_VERSION,  # 출력 메타 필드 (명시적)
+            "gatekeeper_bot_version": GATEKEEPER_BOT_VERSION,  # 호환성 유지
+        },
         "largecap": result["largecap"],
         "volume": result["volume"],
         "structure": result["structure"],
@@ -170,11 +226,33 @@ def main():
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     
+    # latest_watchlist.json 연결 (운영 편의용)
+    # 정찰봇은 watchlist_YYYYMMDD.json을 직접 읽는 것을 원칙으로 함
+    latest_file = OUTPUT_DIR / "latest_watchlist.json"
+    with open(latest_file, "w", encoding="utf-8") as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+    
     print(f"\n📁 저장 완료: {out_file}")
-    print(f"   내일 정찰봇이 이 파일을 자동으로 읽습니다.")
+    print(f"📁 최신 파일: {latest_file}")
+    print(f"   내일 정찰봇이 {out_file.name} 파일을 자동으로 읽습니다.")
+    print(f"   (latest_watchlist.json은 운영 편의용입니다)")
+    print(f"✅ 문지기봇 종목 선정 완료")
     print("="*60)
 
 
 if __name__ == "__main__":
+    # 휴장일 체크 (내일 날짜 기준)
+    from scout_selector.utils.market_calendar import is_market_open
+    
+    tomorrow = datetime.now() + timedelta(days=1)
+    tomorrow_str = tomorrow.strftime("%Y%m%d")
+    
+    if not is_market_open(tomorrow_str):
+        print("=" * 60)
+        print(f"[INFO] Market closed on {tomorrow_str}")
+        print(f"[SKIP] Gatekeeper - market closed")
+        print("=" * 60)
+        sys.exit(0)  # 정상 종료 (오류 아님)
+    
     main()
 

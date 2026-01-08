@@ -40,6 +40,7 @@ def format_day_summary(
     total_count: int,
     event_count: int,
     aggregated: Dict[str, Any] | None = None,
+    event_stats: Dict[str, Any] | None = None,
 ) -> str:
     lines = []
     today = datetime.now().strftime("%Y-%m-%d")
@@ -60,6 +61,40 @@ def format_day_summary(
             parts = [f"{k}:{v}" for k, v in stats.items()]
             lines.append(f"- {observer} → " + ", ".join(parts))
 
+    # 이벤트 통계 추가
+    if event_stats:
+        lines.append("")
+        lines.append("⚡ 이벤트 통계")
+        total_events = event_stats.get("total_events", 0)
+        lines.append(f"총 이벤트 발생: {total_events}건")
+        
+        if total_events > 0:
+            lines.append("")
+            lines.append("📈 이벤트 타입별")
+            by_type = event_stats.get("by_type", {})
+            # 이벤트 타입별로 정렬 (빈도순)
+            sorted_types = sorted(by_type.items(), key=lambda x: x[1], reverse=True)
+            for event_type, count in sorted_types:
+                lines.append(f"- {event_type}: {count}건")
+            
+            # 가장 많이 발생한 종목 Top 5
+            by_symbol = event_stats.get("by_symbol", {})
+            if by_symbol:
+                lines.append("")
+                lines.append("🏆 이벤트 발생 종목 Top 5")
+                sorted_symbols = sorted(by_symbol.items(), key=lambda x: x[1], reverse=True)[:5]
+                for symbol, count in sorted_symbols:
+                    lines.append(f"- {symbol}: {count}건")
+            
+            # 시간대별 분포 (있는 경우)
+            hourly = event_stats.get("hourly_distribution", {})
+            if hourly:
+                lines.append("")
+                lines.append("🕐 시간대별 분포")
+                sorted_hours = sorted(hourly.items())
+                for hour, count in sorted_hours:
+                    lines.append(f"- {hour:02d}시: {count}건")
+
     return "\n".join(lines)
 
 
@@ -71,6 +106,7 @@ def save_day_summary(
     date: str,
     aggregated: Dict[str, Any],
     summary_text: str,
+    event_stats: Dict[str, Any] | None = None,
 ):
     base_dir = os.path.abspath(
         os.path.join(os.path.dirname(__file__), "../../../records/day_summary")
@@ -86,15 +122,21 @@ def save_day_summary(
 
     # JSON (기계용)
     json_path = os.path.join(dir_path, f"summary_{bot_id}.json")
+    json_data = {
+        "bot_id": bot_id,
+        "date": date,
+        "generated_at": datetime.now().isoformat(),
+        "total_scouts": aggregated.get("total_scouts", 0),
+        "aggregated": aggregated,
+    }
+    
+    # 이벤트 통계 추가
+    if event_stats:
+        json_data["event_stats"] = event_stats
+    
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(
-            {
-                "bot_id": bot_id,
-                "date": date,
-                "generated_at": datetime.now().isoformat(),
-                "total_scouts": aggregated.get("total_scouts", 0),
-                "aggregated": aggregated,
-            },
+            json_data,
             f,
             ensure_ascii=False,
             indent=2,

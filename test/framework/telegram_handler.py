@@ -6,6 +6,11 @@ import requests
 from config import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 
 from test.framework.watchlist.store import add_stock, remove_stock, get_watchlist
+from test.framework.watchlist.manual_additions import (
+    add_manual_symbol,
+    remove_manual_symbol,
+    get_manual_symbols,
+)
 from test.tel_logger import tel_log
 
 
@@ -45,13 +50,41 @@ def handle_command(text: str):
             return
         
         stk_cd = parts[1].strip()
+        
+        # 1. 즉시 반영 (실시간 감시용)
         add_stock(stk_cd)
-        current_list = get_watchlist()
-        tel_log(
-            "WATCHLIST",
-            f"➕ 종목 추가: {stk_cd}\n현재 watchlist: {len(current_list)} 종목"
-        )
-        send_message(f"✅ 종목 추가됨: {stk_cd}\n현재 watchlist: {len(current_list)} 종목")
+        
+        # 2. 영속 저장 (파일)
+        file_saved = add_manual_symbol(stk_cd, reason="/add command")
+        
+        if file_saved:
+            current_list = get_watchlist()
+            manual_count = len(get_manual_symbols())
+            tel_log(
+                "WATCHLIST",
+                f"➕ 종목 추가: {stk_cd}\n"
+                f"현재 watchlist: {len(current_list)} 종목\n"
+                f"수동 추가: {manual_count} 종목"
+            )
+            send_message(
+                f"✅ 종목 추가됨: {stk_cd}\n"
+                f"현재 watchlist: {len(current_list)} 종목\n"
+                f"수동 추가: {manual_count} 종목"
+            )
+        else:
+            # 파일 저장 실패해도 메모리는 추가됨 (실시간 감시는 계속)
+            current_list = get_watchlist()
+            tel_log(
+                "WATCHLIST",
+                f"➕ 종목 추가 (메모리만): {stk_cd}\n"
+                f"⚠️ 파일 저장 실패 (재시작 시 사라질 수 있음)\n"
+                f"현재 watchlist: {len(current_list)} 종목"
+            )
+            send_message(
+                f"✅ 종목 추가됨: {stk_cd}\n"
+                f"⚠️ 파일 저장 실패 (재시작 시 사라질 수 있음)\n"
+                f"현재 watchlist: {len(current_list)} 종목"
+            )
         return
     
     # 종목 제거
@@ -62,13 +95,38 @@ def handle_command(text: str):
             return
         
         stk_cd = parts[1].strip()
+        
+        # 1. 즉시 반영 (실시간 감시용)
         remove_stock(stk_cd)
+        
+        # 2. 영속 저장에서도 제거
+        file_removed = remove_manual_symbol(stk_cd)
+        
         current_list = get_watchlist()
-        tel_log(
-            "WATCHLIST",
-            f"➖ 종목 제거: {stk_cd}\n현재 watchlist: {len(current_list)} 종목"
-        )
-        send_message(f"✅ 종목 제거됨: {stk_cd}\n현재 watchlist: {len(current_list)} 종목")
+        manual_count = len(get_manual_symbols())
+        
+        if file_removed:
+            tel_log(
+                "WATCHLIST",
+                f"➖ 종목 제거: {stk_cd}\n"
+                f"현재 watchlist: {len(current_list)} 종목\n"
+                f"수동 추가: {manual_count} 종목"
+            )
+            send_message(
+                f"✅ 종목 제거됨: {stk_cd}\n"
+                f"현재 watchlist: {len(current_list)} 종목\n"
+                f"수동 추가: {manual_count} 종목"
+            )
+        else:
+            tel_log(
+                "WATCHLIST",
+                f"➖ 종목 제거 (메모리만): {stk_cd}\n"
+                f"현재 watchlist: {len(current_list)} 종목"
+            )
+            send_message(
+                f"✅ 종목 제거됨: {stk_cd}\n"
+                f"현재 watchlist: {len(current_list)} 종목"
+            )
         return
     
     # 현재 watchlist 확인

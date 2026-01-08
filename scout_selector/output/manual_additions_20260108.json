@@ -1,0 +1,43 @@
+{
+  "date": "20260108",
+  "updated_at": "2026-01-08T07:04:51.800657",
+  "source": "telegram",
+  "symbols": [
+    {
+      "symbol": "008350",
+      "added_by": "telegram",
+      "added_at": "2026-01-08T06:45:52.401458",
+      "reason": "/add command"
+    },
+    {
+      "symbol": "010170",
+      "added_by": "telegram",
+      "added_at": "2026-01-08T07:04:04.909198",
+      "reason": "/add command"
+    },
+    {
+      "symbol": "002800",
+      "added_by": "telegram",
+      "added_at": "2026-01-08T07:04:16.060386",
+      "reason": "/add command"
+    },
+    {
+      "symbol": "003160",
+      "added_by": "telegram",
+      "added_at": "2026-01-08T07:04:29.148682",
+      "reason": "/add command"
+    },
+    {
+      "symbol": "097520",
+      "added_by": "telegram",
+      "added_at": "2026-01-08T07:04:40.684485",
+      "reason": "/add command"
+    },
+    {
+      "symbol": "190510",
+      "added_by": "telegram",
+      "added_at": "2026-01-08T07:04:51.800380",
+      "reason": "/add command"
+    }
+  ]
+}

@@ -1,3 +1,19 @@
+# ===============================
+# gatekeeper_bot/runner.py
+# 문지기봇 실행 진입점 (오늘 종목 선정)
+# ===============================
+"""
+문지기봇 실행 스크립트
+
+역할:
+- 장 마감 후 배치 프로세스로 실행
+- 오늘 날짜 기준으로 종목 선정
+- 정찰봇이 사용할 watchlist_YYYYMMDD.json 생성
+
+실행 시점:
+- 장 마감 후 (15:30 이후)
+- 또는 수동 실행
+"""
 from __future__ import annotations
 
 import json
@@ -142,9 +158,19 @@ else:
 # =========================
 
 today = datetime.now().strftime("%Y%m%d")
+created_at = datetime.now().isoformat()
+
+# 출력 데이터 계약 준수: 불변 스냅샷 생성
+from selector import GATEKEEPER_BOT_VERSION
+
 output = {
-    "date": today,
-    "phase": phase,
+    "meta": {
+        "date": today,
+        "created_at": created_at,
+        "phase": phase,
+        "gatekeeper_version": GATEKEEPER_BOT_VERSION,  # 출력 메타 필드 (명시적)
+        "gatekeeper_bot_version": GATEKEEPER_BOT_VERSION,  # 호환성 유지
+    },
     "largecap": result["largecap"],
     "volume": result["volume"],
     "structure": result["structure"],
@@ -160,10 +186,11 @@ latest_file = OUTPUT_DIR / "latest_watchlist.json"
 with open(latest_file, "w", encoding="utf-8") as f:
     json.dump(output, f, ensure_ascii=False, indent=2)
 
-print("✅ Watchlist generated")
+print("✅ 문지기봇 종목 선정 완료")
 print(json.dumps(output, ensure_ascii=False, indent=2))
-print(f"📁 Saved to: {out_file}")
-print(f"📁 Latest file: {latest_file}")
+print(f"📁 저장 위치: {out_file}")
+print(f"📁 최신 파일: {latest_file}")
+print(f"📋 정찰봇이 이 watchlist를 사용합니다.")
 
 # =========================
 # 선정 사유 로그 출력
@@ -174,27 +201,28 @@ print("📋 선정 종목 및 사유")
 print("="*60)
 
 total_count = 0
-for category, items in output.items():
-    if category in ["date", "phase"]:
+for category_key, items in output.items():
+    if category_key == "meta":
         continue
     
     if items:
-        print(f"\n[{category.upper()}] {len(items)}종목")
+        print(f"\n[{category_key.upper()}] {len(items)}종목")
         for item in items:
             symbol = item.get("symbol", "")
-            bucket = item.get("bucket", category)
+            category = item.get("category", item.get("bucket", category_key))
             score = item.get("score", 0.0)
             reason = item.get("reason", {})
+            reason_summary = reason.get("summary", "")
             
-            # reason 딕셔너리를 읽기 쉬운 문자열로 변환
-            reason_str = ", ".join([
-                f"{k}={v:,.0f}" if isinstance(v, (int, float)) and v >= 1000
-                else f"{k}={v:.2f}" if isinstance(v, float)
-                else f"{k}={v}"
-                for k, v in reason.items()
-            ])
+            # 구조 점수 표시 (구조형만)
+            structure_score = item.get("structure_score")
+            score_str = f"점수={score:.3f}"
+            if structure_score is not None:
+                score_str += f" (구조점수={structure_score:.0f}점)"
             
-            print(f"  • {symbol} [{bucket}]: 점수={score:.3f}, {reason_str}")
+            print(f"  • {symbol} [{category}]: {score_str}")
+            if reason_summary:
+                print(f"    └─ {reason_summary}")
             total_count += 1
 
 print(f"\n총 {total_count}종목 선정 완료")

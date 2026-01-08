@@ -472,7 +472,7 @@ def aggregate_reasons(
     # watchlist JSON 파일 읽기
     watchlist_path = os.path.join(
         PROJECT_ROOT,
-        "scout_selector",
+        "gatekeeper_bot",
         "output",
         f"watchlist_{date.replace('-', '')}.json"
     )

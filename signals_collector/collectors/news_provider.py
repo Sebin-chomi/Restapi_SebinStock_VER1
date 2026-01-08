@@ -5,7 +5,7 @@
 뉴스 수집기
 
 당일 뉴스에서 종목별 히트(건수/키워드)를 추출하여
-scout_selector/input/news/news_YYYYMMDD.json 생성
+gatekeeper_bot/input/news/news_YYYYMMDD.json 생성
 """
 import sys
 from pathlib import Path
@@ -146,7 +146,7 @@ def get_stock_symbols_from_watchlist() -> List[str]:
     """
     try:
         # 최근 watchlist 파일 찾기
-        watchlist_dir = PROJECT_ROOT / "scout_selector" / "output"
+        watchlist_dir = PROJECT_ROOT / "gatekeeper_bot" / "output"
         watchlist_files = sorted(watchlist_dir.glob("watchlist_*.json"), reverse=True)
         
         if not watchlist_files:
@@ -199,7 +199,7 @@ def collect_news_from_mock(
     MOCK 뉴스 수집 (실제 API 연동 전까지 사용)
     
     Args:
-        output_dir: scout_selector/input/news/ 디렉토리
+        output_dir: gatekeeper_bot/input/news/ 디렉토리
         date: 날짜 (YYYYMMDD)
     
     Returns:
@@ -233,7 +233,7 @@ def collect_news_from_api(
     실제 뉴스 API에서 수집
     
     Args:
-        output_dir: scout_selector/input/news/ 디렉토리
+        output_dir: gatekeeper_bot/input/news/ 디렉토리
         date: 날짜 (YYYYMMDD)
         api_config: API 설정 딕셔너리
     
@@ -310,7 +310,7 @@ def collect_news(
     뉴스 수집 (통합 함수)
     
     Args:
-        output_dir: scout_selector/input/news/ 디렉토리
+        output_dir: gatekeeper_bot/input/news/ 디렉토리
         date: 날짜 (YYYYMMDD)
         use_api: 실제 API 사용 여부
         api_config: API 설정 딕셔너리
