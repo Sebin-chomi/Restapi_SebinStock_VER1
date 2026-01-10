@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "date": "2026-01-09",
+    "generated_at": "2026-01-09T19:55:21.140277",
+    "scout_version": "scout_v1",
+    "test_mode": true,
+    "condition_id": null
+  },
+  "observer_stats": {
+    "total_records": 358,
+    "total_stocks": 6,
+    "by_stock": {
+      "005930": {
+        "records": 87,
+        "observer_triggered_records": 87
+      },
+      "000660": {
+        "records": 87,
+        "observer_triggered_records": 87
+      },
+      "002800": {
+        "records": 46,
+        "observer_triggered_records": 46
+      },
+      "003160": {
+        "records": 46,
+        "observer_triggered_records": 46
+      },
+      "008350": {
+        "records": 46,
+        "observer_triggered_records": 46
+      },
+      "010170": {
+        "records": 46,
+        "observer_triggered_records": 46
+      }
+    }
+  },
+  "cycle_summary": {
+    "triggered_records": 358,
+    "triggered_cycles": 6,
+    "open_cycles": 6
+  },
+  "cycle_outcome_distribution": {
+    "reached_1pct": 0,
+    "no_reaction": 0,
+    "timeout": 6,
+    "manual_stop": 0
+  },
+  "representative_cycles": [
+    {
+      "cycle_id": "2026-01-09-005930-01",
+      "stock": "005930",
+      "start_time": "2026-01-09T09:00:25.745554",
+      "end_time": "2026-01-09T15:28:05.530959",
+      "duration_sec": 23259,
+      "exit_type": "timeout"
+    },
+    {
+      "cycle_id": "2026-01-09-000660-02",
+      "stock": "000660",
+      "start_time": "2026-01-09T09:00:28.127291",
+      "end_time": "2026-01-09T15:28:05.530959",
+      "duration_sec": 23257,
+      "exit_type": "timeout"
+    }
+  ],
+  "observation_hints": {
+    "dominant_exit_type": "timeout",
+    "avg_cycle_duration_sec": 16836.518588833333
+  },
+  "price_zone_summary": {
+    "zones": []
+  },
+  "manual_notes": {
+    "market_one_liner": null,
+    "confusing_cycle_id": null,
+    "unnecessary_action_note": null,
+    "free_memo": null
+  }
+}

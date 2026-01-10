@@ -29,6 +29,28 @@ os.makedirs(ANALYSIS_OUTPUT_DIR, exist_ok=True)
 
 
 # ===============================
+# 날짜 경로 변환 유틸리티
+# ===============================
+def get_analysis_date_dir(date: str) -> str:
+    """
+    날짜를 YYYY/MM/YYYYMMDD 구조의 디렉터리 경로로 변환
+    
+    Args:
+        date: 날짜 (YYYY-MM-DD 형식)
+        
+    Returns:
+        YYYY/MM/YYYYMMDD 구조의 디렉터리 경로
+    """
+    # YYYY-MM-DD → YYYY, MM, YYYYMMDD 추출
+    year, month, day = date.split("-")
+    date_compact = f"{year}{month}{day}"
+    
+    # YYYY/MM/YYYYMMDD 구조로 경로 생성
+    date_dir = os.path.join(ANALYSIS_OUTPUT_DIR, year, month, date_compact)
+    return date_dir
+
+
+# ===============================
 # 제외할 날짜 목록 (테스트/비정상 데이터)
 # ===============================
 EXCLUDED_DATES = {
@@ -43,6 +65,25 @@ FIRST_VALID_DATE = "2026-01-07"
 # ===============================
 # JSONL 읽기
 # ===============================
+def get_scout_date_dir(date: str) -> str:
+    """
+    날짜를 YYYY/MM/YYYYMMDD 구조의 디렉터리 경로로 변환
+    
+    Args:
+        date: 날짜 (YYYY-MM-DD 형식)
+        
+    Returns:
+        YYYY/MM/YYYYMMDD 구조의 디렉터리 경로
+    """
+    # YYYY-MM-DD → YYYY, MM, YYYYMMDD 추출
+    year, month, day = date.split("-")
+    date_compact = f"{year}{month}{day}"
+    
+    # YYYY/MM/YYYYMMDD 구조로 경로 생성
+    date_dir = os.path.join(SCOUT_RECORDS_DIR, year, month, date_compact)
+    return date_dir
+
+
 def load_scout_records(date: str) -> List[Dict[str, Any]]:
     """특정 날짜의 모든 정찰 기록 로드"""
     # ✅ 제외된 날짜는 빈 리스트 반환
@@ -51,7 +92,8 @@ def load_scout_records(date: str) -> List[Dict[str, Any]]:
         print(msg)
         return []
     
-    date_dir = os.path.join(SCOUT_RECORDS_DIR, date)
+    # YYYY/MM/YYYYMMDD 구조로 디렉터리 경로 생성
+    date_dir = get_scout_date_dir(date)
     
     if not os.path.exists(date_dir):
         return []
@@ -666,7 +708,8 @@ def save_daily_analysis(
 ) -> Dict[str, str]:
     """일일 평가 기록 저장"""
     
-    date_dir = os.path.join(ANALYSIS_OUTPUT_DIR, date)
+    # YYYY/MM/YYYYMMDD 구조로 디렉터리 생성
+    date_dir = get_analysis_date_dir(date)
     os.makedirs(date_dir, exist_ok=True)
     
     # JSON 저장
@@ -767,6 +810,119 @@ def save_daily_analysis(
                 f.write(f"    종료 사유: {cycle['exit_type']}\n")
                 f.write("\n")
         
+        # 확장된 Cycle 분석 (설계서 v1)
+        enhanced_analysis = observer_stats.get('enhanced_cycle_analysis')
+        if enhanced_analysis:
+            f.write("\n" + "=" * 60 + "\n")
+            f.write("🔍 확장된 Cycle 분석 (v1)\n")
+            f.write("=" * 60 + "\n\n")
+            
+            enhanced_cycles = enhanced_analysis.get('cycles', [])
+            fail_count = enhanced_analysis.get('fail_cycles_count', 0)
+            
+            f.write(f"📊 분석된 Cycle: {len(enhanced_cycles)}개")
+            if fail_count > 0:
+                f.write(f" (FAIL 제외: {fail_count}개)")
+            f.write("\n\n")
+            
+            # 시장 메모
+            market_memo = enhanced_analysis.get('market_memo', '')
+            if market_memo:
+                f.write(f"💭 시장 메모: {market_memo}\n\n")
+            
+            # 통계 보강
+            stats = enhanced_analysis.get('statistics', {})
+            if stats:
+                f.write("📈 Cycle 통계 (보강)\n")
+                
+                duration_stats = stats.get('duration', {})
+                if duration_stats:
+                    f.write("  유지 시간 (분):\n")
+                    f.write(f"    평균: {duration_stats.get('mean', 0):.2f}\n")
+                    f.write(f"    중앙값: {duration_stats.get('median', 0):.2f}\n")
+                    f.write(f"    표준편차: {duration_stats.get('std', 0):.2f}\n")
+                    f.write(f"    최소/최대: {duration_stats.get('min', 0):.2f} / {duration_stats.get('max', 0):.2f}\n")
+                
+                info_score_stats = stats.get('info_score', {})
+                if info_score_stats:
+                    f.write("  정보량 점수:\n")
+                    f.write(f"    평균: {info_score_stats.get('mean', 0):.2f}\n")
+                    f.write(f"    중앙값: {info_score_stats.get('median', 0):.2f}\n")
+                    f.write(f"    표준편차: {info_score_stats.get('std', 0):.2f}\n")
+                
+                amplitude_stats = stats.get('amplitude_pct', {})
+                if amplitude_stats:
+                    f.write("  가격 변동폭 (%):\n")
+                    f.write(f"    평균: {amplitude_stats.get('mean', 0):.2f}\n")
+                    f.write(f"    중앙값: {amplitude_stats.get('median', 0):.2f}\n")
+                    f.write(f"    최소/최대: {amplitude_stats.get('min', 0):.2f} / {amplitude_stats.get('max', 0):.2f}\n")
+                
+                f.write("\n")
+            
+            # 타임아웃 서브타입 분포
+            timeout_subtypes = {}
+            for cycle in enhanced_cycles:
+                if cycle.get('exit_type') == 'timeout':
+                    subtype = cycle.get('timeout_subtype', 'N/A')
+                    timeout_subtypes[subtype] = timeout_subtypes.get(subtype, 0) + 1
+            
+            if timeout_subtypes:
+                f.write("⏱️  타임아웃 서브타입 분포\n")
+                for subtype, count in sorted(timeout_subtypes.items(), key=lambda x: x[1], reverse=True):
+                    f.write(f"  {subtype}: {count}개\n")
+                f.write("\n")
+            
+            # 종목별/슬롯별 요약
+            group_summary = enhanced_analysis.get('summary_by_group', {})
+            if group_summary:
+                by_stock = group_summary.get('by_stock', {})
+                if by_stock:
+                    f.write("📊 종목별 요약 (상위 10개)\n")
+                    sorted_stocks = sorted(
+                        by_stock.items(),
+                        key=lambda x: x[1]['cycle_count'],
+                        reverse=True
+                    )[:10]
+                    for stock, data in sorted_stocks:
+                        f.write(f"  {stock}: {data['cycle_count']}개 cycle, ")
+                        f.write(f"평균 duration {data['avg_duration']:.1f}분, ")
+                        f.write(f"평균 info_score {data['avg_info_score']:.1f}, ")
+                        f.write(f"NO_EVENT 비율 {data['no_event_timeout_ratio']:.1%}\n")
+                    f.write("\n")
+                
+                by_slot = group_summary.get('by_slot', {})
+                if by_slot:
+                    f.write("📊 슬롯별 요약\n")
+                    for slot, data in sorted(by_slot.items()):
+                        f.write(f"  {slot}: {data['cycle_count']}개 cycle, ")
+                        f.write(f"평균 duration {data['avg_duration']:.1f}분, ")
+                        f.write(f"평균 info_score {data['avg_info_score']:.1f}, ")
+                        f.write(f"NO_EVENT 비율 {data['no_event_timeout_ratio']:.1%}\n")
+                    f.write("\n")
+            
+            # 확장된 Cycle 상세 (상위 10개, info_score 기준)
+            if enhanced_cycles:
+                f.write("🔍 확장된 Cycle 상세 (info_score 상위 10개)\n")
+                sorted_cycles = sorted(
+                    enhanced_cycles,
+                    key=lambda c: c.get('info_score', 0),
+                    reverse=True
+                )[:10]
+                for cycle in sorted_cycles:
+                    f.write(f"  {cycle.get('cycle_id', 'N/A')}\n")
+                    f.write(f"    종목: {cycle.get('stock', 'N/A')} ({cycle.get('slot_type', 'unknown')})\n")
+                    f.write(f"    duration: {cycle.get('duration_min', 0):.1f}분\n")
+                    f.write(f"    exit_type: {cycle.get('exit_type', 'N/A')}")
+                    if cycle.get('timeout_subtype') != 'N/A':
+                        f.write(f" ({cycle.get('timeout_subtype', 'N/A')})")
+                    f.write("\n")
+                    f.write(f"    max_return: {cycle.get('max_return_pct', 0):.2f}%, ")
+                    f.write(f"amplitude: {cycle.get('amplitude_pct', 0):.2f}%\n")
+                    f.write(f"    event_count: {cycle.get('event_count', 0)}, ")
+                    f.write(f"info_score: {cycle.get('info_score', 0):.1f}\n")
+                    f.write(f"    data_quality: {cycle.get('data_quality', {}).get('status', 'N/A')}\n")
+                    f.write("\n")
+        
         if reason_stats and reason_stats.get('watchlist_loaded'):
             f.write("\n📋 Watchlist 선정 사유\n")
             for bucket, data in reason_stats['by_bucket'].items():
@@ -836,6 +992,75 @@ def analyze_daily_market(
     observer_stats = aggregate_observers(records)
     reason_stats = aggregate_reasons(date, records)
     
+    # 2.5. Cycle 분석 확장 (설계서 v1)
+    print("  🔍 Cycle 분석 확장 중...")
+    try:
+        from test.framework.analyzer.cycle_analyzer_enhanced import (
+            enhance_cycle_analysis,
+            calculate_enhanced_statistics,
+            generate_summary_by_group,
+            generate_market_memo,
+        )
+        
+        # watchlist 데이터 로드 (슬롯 타입 추출용)
+        watchlist_data = None
+        try:
+            date_str = date.replace("-", "")
+            watchlist_path = os.path.join(
+                PROJECT_ROOT,
+                "scout_selector",
+                "output",
+                f"watchlist_{date_str}.json"
+            )
+            if os.path.exists(watchlist_path):
+                with open(watchlist_path, "r", encoding="utf-8") as f:
+                    watchlist_data = json.load(f)
+        except Exception as e:
+            print(f"    ⚠️  watchlist 로드 실패 (슬롯 타입 추출 불가): {e}")
+        
+        # 기존 cycle 목록 추출
+        cycles = observer_stats.get("observer_summary", {}).get("cycle_summary", [])
+        
+        if cycles:
+            # 확장 분석 실행
+            enhanced_result = enhance_cycle_analysis(
+                cycles=cycles,
+                all_records=records,
+                watchlist_data=watchlist_data,
+                exclude_fail=True,
+            )
+            
+            enhanced_cycles = enhanced_result["enhanced_cycles"]
+            
+            # 통계 보강
+            enhanced_stats = calculate_enhanced_statistics(enhanced_cycles)
+            
+            # 종목별/슬롯별 요약
+            group_summary = generate_summary_by_group(enhanced_cycles)
+            
+            # 시장 메모 생성
+            market_memo = generate_market_memo(enhanced_cycles)
+            
+            # observer_stats에 확장 정보 추가
+            observer_stats["enhanced_cycle_analysis"] = {
+                "cycles": enhanced_cycles,
+                "statistics": enhanced_stats,
+                "summary_by_group": group_summary,
+                "market_memo": market_memo,
+                "fail_cycles_count": enhanced_result["fail_cycles_count"],
+                "fail_cycle_ids": enhanced_result["fail_cycle_ids"],
+            }
+            
+            print(f"    ✅ {len(enhanced_cycles)}개 cycle 확장 분석 완료")
+            if enhanced_result["fail_cycles_count"] > 0:
+                print(f"    ⚠️  {enhanced_result['fail_cycles_count']}개 FAIL cycle 제외됨")
+        else:
+            print("    ⚠️  분석할 cycle이 없습니다")
+    except Exception as e:
+        print(f"    ⚠️  Cycle 분석 확장 실패: {e}")
+        import traceback
+        traceback.print_exc()
+    
     # 3. 상위 100 결과 읽기 (선택)
     top_100_results = None
     if include_top_100:
@@ -877,7 +1102,9 @@ def analyze_daily_market(
             test_mode=True,
         )
         
-        date_dir = os.path.join(ANALYSIS_OUTPUT_DIR, date)
+        # YYYY/MM/YYYYMMDD 구조로 디렉터리 생성
+        date_dir = get_analysis_date_dir(date)
+        os.makedirs(date_dir, exist_ok=True)
         report_path = save_daily_report(daily_report, date_dir)
         print(f"     Report: {report_path}")
         

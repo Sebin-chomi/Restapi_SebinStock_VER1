@@ -153,6 +153,11 @@ def load_candidate_pool(date: str) -> Set[str]:
     """
     대기실장봇 출력에서 종목 리스트 로드
     
+    우선순위:
+    1. latest.json (오늘 날짜인 경우 운영 편의용)
+    2. history/YYYY/MM/candidate_pool_YYYYMMDD.json (날짜별 파일)
+    3. output/candidate_pool_YYYYMMDD.json (구버전 호환)
+    
     Args:
         date: 날짜 (YYYYMMDD)
         
@@ -162,17 +167,45 @@ def load_candidate_pool(date: str) -> Set[str]:
     symbols = set()
     
     try:
-        candidate_file = INPUT_DIR / f"candidate_pool_{date}.json"
+        import json
         
+        # 1. latest.json 우선 시도 (오늘 날짜인 경우)
+        today_str = datetime.now().strftime("%Y%m%d")
+        if date == today_str:
+            latest_file = INPUT_DIR / "latest.json"
+            if latest_file.exists():
+                try:
+                    with open(latest_file, "r", encoding="utf-8") as f:
+                        data = json.load(f)
+                    symbols.update(data.get("symbols", []))
+                    print(f"  ✅ 대기실장봇 출력 로드 (latest.json): {len(symbols)}종목")
+                    return symbols
+                except Exception as e:
+                    print(f"  ⚠️  latest.json 로드 실패: {e}")
+        
+        # 2. history/YYYY/MM/candidate_pool_YYYYMMDD.json 시도
+        year = date[:4]
+        month = date[4:6]
+        history_file = INPUT_DIR / "history" / year / month / f"candidate_pool_{date}.json"
+        if history_file.exists():
+            try:
+                with open(history_file, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                symbols.update(data.get("symbols", []))
+                print(f"  ✅ 대기실장봇 출력 로드 (history): {len(symbols)}종목")
+                return symbols
+            except Exception as e:
+                print(f"  ⚠️  history 파일 로드 실패: {e}")
+        
+        # 3. 구버전 호환: output/candidate_pool_YYYYMMDD.json
+        candidate_file = INPUT_DIR / f"candidate_pool_{date}.json"
         if candidate_file.exists():
-            import json
             with open(candidate_file, "r", encoding="utf-8") as f:
                 data = json.load(f)
-            
             symbols.update(data.get("symbols", []))
-            print(f"  ✅ 대기실장봇 출력 로드: {len(symbols)}종목")
+            print(f"  ✅ 대기실장봇 출력 로드 (구버전): {len(symbols)}종목")
         else:
-            print(f"  ℹ️  대기실장봇 출력 없음: {candidate_file.name}")
+            print(f"  ℹ️  대기실장봇 출력 없음: candidate_pool_{date}.json")
             
     except Exception as e:
         print(f"  ⚠️  대기실장봇 출력 로드 실패: {e}")

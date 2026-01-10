@@ -1,0 +1,131 @@
+{"symbol": "005930", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T09:00:25+09:00", "metrics": {"current_price": 70922, "day_high": 70922}}
+{"symbol": "005930", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T09:00:25+09:00", "metrics": {"current_price": 70922, "day_low": 70922}}
+{"symbol": "000660", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T09:00:28+09:00", "metrics": {"current_price": 73754, "day_high": 73754}}
+{"symbol": "000660", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T09:00:28+09:00", "metrics": {"current_price": 73754, "day_low": 73754}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T09:04:30+09:00", "metrics": {"current_price": 74692, "day_open": 70922, "change_pct": 5.315698936860213}}
+{"symbol": "000660", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T09:12:31+09:00", "metrics": {"current_price": 70133, "day_low": 70133}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T09:12:31+09:00", "metrics": {"current_price": 70133, "day_open": 73754, "change_pct": -4.909564227024974}}
+{"symbol": "005930", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T09:24:34+09:00", "metrics": {"current_price": 70080, "day_low": 70080}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T09:26:35+09:00", "metrics": {"current_price": 73865, "day_open": 70922, "change_pct": 4.149629170074165}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T09:26:36+09:00", "metrics": {"current_price": 71187, "day_open": 73754, "change_pct": -3.4804891938064375}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T09:40:38+09:00", "metrics": {"current_price": 73249, "day_open": 70922, "change_pct": 3.281069343786131}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T09:55:39+09:00", "metrics": {"current_price": 74290, "day_open": 70922, "change_pct": 4.74887905022419}}
+{"symbol": "000660", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T09:55:40+09:00", "metrics": {"current_price": 70035, "day_low": 70035}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T09:55:40+09:00", "metrics": {"current_price": 70035, "day_open": 73754, "change_pct": -5.042438376223663}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T10:05:43+09:00", "metrics": {"current_price": 73237, "day_open": 70922, "change_pct": 3.26414934717013}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T10:15:44+09:00", "metrics": {"current_price": 71174, "day_open": 73754, "change_pct": -3.4981153564552434}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T10:30:45+09:00", "metrics": {"current_price": 73241, "day_open": 70922, "change_pct": 3.2697893460421312}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T10:30:46+09:00", "metrics": {"current_price": 71194, "day_open": 73754, "change_pct": -3.470998183149389}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T10:50:47+09:00", "metrics": {"current_price": 70248, "day_open": 73754, "change_pct": -4.753640480516311}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T11:00:49+09:00", "metrics": {"current_price": 73743, "day_open": 70922, "change_pct": 3.9776092044781595}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T11:00:50+09:00", "metrics": {"current_price": 70687, "day_open": 73754, "change_pct": -4.158418526452802}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T11:15:51+09:00", "metrics": {"current_price": 74114, "day_open": 70922, "change_pct": 4.5007190998561795}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T11:25:52+09:00", "metrics": {"current_price": 74501, "day_open": 70922, "change_pct": 5.0463889907222015}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T11:30:54+09:00", "metrics": {"current_price": 70620, "day_open": 73754, "change_pct": -4.249261057027415}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T11:35:55+09:00", "metrics": {"current_price": 73230, "day_open": 70922, "change_pct": 3.2542793491441304}}
+{"symbol": "002800", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T11:40:56+09:00", "metrics": {"current_price": 70733, "day_high": 70733}}
+{"symbol": "002800", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T11:40:56+09:00", "metrics": {"current_price": 70733, "day_low": 70733}}
+{"symbol": "003160", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T11:40:58+09:00", "metrics": {"current_price": 71434, "day_high": 71434}}
+{"symbol": "003160", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T11:40:58+09:00", "metrics": {"current_price": 71434, "day_low": 71434}}
+{"symbol": "008350", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T11:41:01+09:00", "metrics": {"current_price": 70937, "day_high": 70937}}
+{"symbol": "008350", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T11:41:01+09:00", "metrics": {"current_price": 70937, "day_low": 70937}}
+{"symbol": "010170", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T11:41:03+09:00", "metrics": {"current_price": 74223, "day_high": 74223}}
+{"symbol": "010170", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T11:41:03+09:00", "metrics": {"current_price": 74223, "day_low": 74223}}
+{"symbol": "008350", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T11:46:06+09:00", "metrics": {"current_price": 74560, "day_open": 70937, "change_pct": 5.107348774264488}}
+{"symbol": "010170", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T11:46:07+09:00", "metrics": {"current_price": 70824, "day_open": 74223, "change_pct": -4.57944302978861}}
+{"symbol": "002800", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T11:51:09+09:00", "metrics": {"current_price": 73809, "day_high": 73809}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T11:51:09+09:00", "metrics": {"current_price": 73809, "day_open": 70733, "change_pct": 4.348748109086282}}
+{"symbol": "003160", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T11:51:11+09:00", "metrics": {"current_price": 73080, "day_high": 73080}}
+{"symbol": "008350", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T11:51:12+09:00", "metrics": {"current_price": 74845, "day_high": 74845}}
+{"symbol": "010170", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T11:51:13+09:00", "metrics": {"current_price": 74381, "day_high": 74381}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T11:56:15+09:00", "metrics": {"current_price": 73268, "day_open": 70922, "change_pct": 3.3078593384281327}}
+{"symbol": "003160", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T11:56:16+09:00", "metrics": {"current_price": 70090, "day_low": 70090}}
+{"symbol": "008350", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T11:56:17+09:00", "metrics": {"current_price": 70557, "day_low": 70557}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T12:01:18+09:00", "metrics": {"current_price": 73606, "day_open": 70733, "change_pct": 4.061753354162838}}
+{"symbol": "010170", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T12:01:19+09:00", "metrics": {"current_price": 70258, "day_low": 70258}}
+{"symbol": "010170", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T12:01:19+09:00", "metrics": {"current_price": 70258, "day_open": 74223, "change_pct": -5.342009889117929}}
+{"symbol": "008350", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T12:06:22+09:00", "metrics": {"current_price": 73642, "day_open": 70937, "change_pct": 3.81324273651268}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T12:11:23+09:00", "metrics": {"current_price": 74392, "day_open": 70922, "change_pct": 4.892699021460196}}
+{"symbol": "002800", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T12:11:24+09:00", "metrics": {"current_price": 70049, "day_low": 70049}}
+{"symbol": "003160", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T12:11:25+09:00", "metrics": {"current_price": 70032, "day_low": 70032}}
+{"symbol": "010170", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T12:11:27+09:00", "metrics": {"current_price": 71330, "day_open": 74223, "change_pct": -3.897713646713283}}
+{"symbol": "008350", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T12:16:28+09:00", "metrics": {"current_price": 74009, "day_open": 70937, "change_pct": 4.330603211300168}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T12:21:29+09:00", "metrics": {"current_price": 74262, "day_open": 70922, "change_pct": 4.709399058120188}}
+{"symbol": "002800", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T12:21:30+09:00", "metrics": {"current_price": 74070, "day_high": 74070}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T12:21:30+09:00", "metrics": {"current_price": 74070, "day_open": 70733, "change_pct": 4.717741365416425}}
+{"symbol": "008350", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T12:21:33+09:00", "metrics": {"current_price": 70205, "day_low": 70205}}
+{"symbol": "010170", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T12:21:34+09:00", "metrics": {"current_price": 71405, "day_open": 74223, "change_pct": -3.7966668013957943}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T12:26:35+09:00", "metrics": {"current_price": 70341, "day_open": 73754, "change_pct": -4.627545624644087}}
+{"symbol": "010170", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T12:26:36+09:00", "metrics": {"current_price": 74787, "day_high": 74787}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T12:31:38+09:00", "metrics": {"current_price": 73256, "day_open": 70922, "change_pct": 3.2909393418121318}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T12:31:39+09:00", "metrics": {"current_price": 73384, "day_open": 70733, "change_pct": 3.7478970211923714}}
+{"symbol": "008350", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T12:31:40+09:00", "metrics": {"current_price": 74974, "day_high": 74974}}
+{"symbol": "008350", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T12:31:40+09:00", "metrics": {"current_price": 74974, "day_open": 70937, "change_pct": 5.690965222662362}}
+{"symbol": "010170", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T12:31:42+09:00", "metrics": {"current_price": 70320, "day_open": 74223, "change_pct": -5.258477830322137}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T12:36:44+09:00", "metrics": {"current_price": 71467, "day_open": 73754, "change_pct": -3.1008487675244734}}
+{"symbol": "002800", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T12:36:45+09:00", "metrics": {"current_price": 74238, "day_high": 74238}}
+{"symbol": "003160", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T12:36:46+09:00", "metrics": {"current_price": 74124, "day_high": 74124}}
+{"symbol": "003160", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T12:36:46+09:00", "metrics": {"current_price": 74124, "day_open": 71434, "change_pct": 3.765713805750763}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T12:46:48+09:00", "metrics": {"current_price": 73203, "day_open": 70733, "change_pct": 3.492005146112847}}
+{"symbol": "008350", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T12:51:50+09:00", "metrics": {"current_price": 74987, "day_high": 74987}}
+{"symbol": "008350", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T12:51:50+09:00", "metrics": {"current_price": 74987, "day_open": 70937, "change_pct": 5.709291343022683}}
+{"symbol": "010170", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T12:56:52+09:00", "metrics": {"current_price": 71561, "day_open": 74223, "change_pct": -3.5864893631354167}}
+{"symbol": "003160", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T13:01:53+09:00", "metrics": {"current_price": 73720, "day_open": 71434, "change_pct": 3.2001567880841053}}
+{"symbol": "008350", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T13:06:54+09:00", "metrics": {"current_price": 74098, "day_open": 70937, "change_pct": 4.456066650690049}}
+{"symbol": "010170", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T13:06:56+09:00", "metrics": {"current_price": 70061, "day_low": 70061}}
+{"symbol": "010170", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T13:06:56+09:00", "metrics": {"current_price": 70061, "day_open": 74223, "change_pct": -5.607426269485201}}
+{"symbol": "005930", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T13:11:58+09:00", "metrics": {"current_price": 74957, "day_high": 74957}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T13:11:58+09:00", "metrics": {"current_price": 74957, "day_open": 70922, "change_pct": 5.6893488621302275}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T13:12:01+09:00", "metrics": {"current_price": 71343, "day_open": 73754, "change_pct": -3.2689752420207716}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T13:17:02+09:00", "metrics": {"current_price": 72907, "day_open": 70733, "change_pct": 3.0735300354855584}}
+{"symbol": "010170", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T13:17:03+09:00", "metrics": {"current_price": 70122, "day_open": 74223, "change_pct": -5.525241501960309}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T13:22:04+09:00", "metrics": {"current_price": 73891, "day_open": 70922, "change_pct": 4.186289162742168}}
+{"symbol": "008350", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T13:22:05+09:00", "metrics": {"current_price": 74801, "day_open": 70937, "change_pct": 5.447086851713492}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T13:27:07+09:00", "metrics": {"current_price": 73889, "day_open": 70733, "change_pct": 4.461849490336901}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T13:32:08+09:00", "metrics": {"current_price": 74620, "day_open": 70922, "change_pct": 5.214178957164209}}
+{"symbol": "008350", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T13:37:09+09:00", "metrics": {"current_price": 74650, "day_open": 70937, "change_pct": 5.234221915220548}}
+{"symbol": "002800", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T13:42:11+09:00", "metrics": {"current_price": 74251, "day_high": 74251}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T13:42:11+09:00", "metrics": {"current_price": 74251, "day_open": 70733, "change_pct": 4.97363324049595}}
+{"symbol": "003160", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T13:42:13+09:00", "metrics": {"current_price": 74719, "day_high": 74719}}
+{"symbol": "003160", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T13:42:13+09:00", "metrics": {"current_price": 74719, "day_open": 71434, "change_pct": 4.598650502561806}}
+{"symbol": "010170", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T13:42:15+09:00", "metrics": {"current_price": 70764, "day_open": 74223, "change_pct": -4.660280506042602}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T13:47:17+09:00", "metrics": {"current_price": 70216, "day_open": 73754, "change_pct": -4.797027957805678}}
+{"symbol": "002800", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T13:52:18+09:00", "metrics": {"current_price": 74407, "day_high": 74407}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T13:52:18+09:00", "metrics": {"current_price": 74407, "day_open": 70733, "change_pct": 5.194180933934655}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T13:57:20+09:00", "metrics": {"current_price": 74506, "day_open": 70922, "change_pct": 5.053438989312202}}
+{"symbol": "000660", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T13:57:21+09:00", "metrics": {"current_price": 74914, "day_high": 74914}}
+{"symbol": "010170", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T13:57:23+09:00", "metrics": {"current_price": 70655, "day_open": 74223, "change_pct": -4.807135254570686}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:02:24+09:00", "metrics": {"current_price": 73271, "day_open": 70733, "change_pct": 3.5881413201758727}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:07:25+09:00", "metrics": {"current_price": 73870, "day_open": 70922, "change_pct": 4.156679168664167}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:12:26+09:00", "metrics": {"current_price": 73513, "day_open": 70733, "change_pct": 3.9302729984589937}}
+{"symbol": "008350", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:12:27+09:00", "metrics": {"current_price": 74458, "day_open": 70937, "change_pct": 4.963559214514287}}
+{"symbol": "010170", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T14:12:29+09:00", "metrics": {"current_price": 70501, "day_open": 74223, "change_pct": -5.0146181102892635}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T14:17:30+09:00", "metrics": {"current_price": 70677, "day_open": 73754, "change_pct": -4.17197711310573}}
+{"symbol": "008350", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T14:17:31+09:00", "metrics": {"current_price": 70143, "day_low": 70143}}
+{"symbol": "010170", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T14:17:32+09:00", "metrics": {"current_price": 70038, "day_low": 70038}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:22:33+09:00", "metrics": {"current_price": 74194, "day_open": 70922, "change_pct": 4.613519077296185}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:22:35+09:00", "metrics": {"current_price": 73572, "day_open": 70733, "change_pct": 4.013685267131325}}
+{"symbol": "003160", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:22:36+09:00", "metrics": {"current_price": 74432, "day_open": 71434, "change_pct": 4.196881037041185}}
+{"symbol": "008350", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:22:37+09:00", "metrics": {"current_price": 73653, "day_open": 70937, "change_pct": 3.828749453740643}}
+{"symbol": "010170", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T14:27:38+09:00", "metrics": {"current_price": 71901, "day_open": 74223, "change_pct": -3.1284103310294653}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:32:39+09:00", "metrics": {"current_price": 73498, "day_open": 70922, "change_pct": 3.632159273568145}}
+{"symbol": "003160", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:32:41+09:00", "metrics": {"current_price": 73759, "day_open": 71434, "change_pct": 3.254752638799451}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:37:42+09:00", "metrics": {"current_price": 73009, "day_open": 70733, "change_pct": 3.217734296580097}}
+{"symbol": "003160", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:47:43+09:00", "metrics": {"current_price": 74589, "day_open": 71434, "change_pct": 4.416664333510653}}
+{"symbol": "008350", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:47:44+09:00", "metrics": {"current_price": 74334, "day_open": 70937, "change_pct": 4.788756220308161}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T14:52:46+09:00", "metrics": {"current_price": 70873, "day_open": 73754, "change_pct": -3.9062288147083546}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:57:47+09:00", "metrics": {"current_price": 73488, "day_open": 70733, "change_pct": 3.894928816818175}}
+{"symbol": "003160", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T14:57:48+09:00", "metrics": {"current_price": 73892, "day_open": 71434, "change_pct": 3.4409384886748606}}
+{"symbol": "010170", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T14:57:49+09:00", "metrics": {"current_price": 74895, "day_high": 74895}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T15:02:51+09:00", "metrics": {"current_price": 74916, "day_open": 70922, "change_pct": 5.631538873692225}}
+{"symbol": "008350", "event_type": "DAY_LOW_BREAK", "occurred_at": "2026-01-09T15:02:52+09:00", "metrics": {"current_price": 70094, "day_low": 70094}}
+{"symbol": "010170", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T15:02:53+09:00", "metrics": {"current_price": 70095, "day_open": 74223, "change_pct": -5.5616183662746055}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T15:12:54+09:00", "metrics": {"current_price": 74857, "day_open": 70922, "change_pct": 5.548348890330222}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T15:12:55+09:00", "metrics": {"current_price": 73007, "day_open": 70733, "change_pct": 3.2149067620488316}}
+{"symbol": "003160", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T15:17:56+09:00", "metrics": {"current_price": 73620, "day_open": 71434, "change_pct": 3.0601674272755273}}
+{"symbol": "010170", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T15:17:58+09:00", "metrics": {"current_price": 71741, "day_open": 74223, "change_pct": -3.3439769343734422}}
+{"symbol": "000660", "event_type": "PRICE_DROP", "occurred_at": "2026-01-09T15:22:59+09:00", "metrics": {"current_price": 70399, "day_open": 73754, "change_pct": -4.548905822057109}}
+{"symbol": "005930", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T15:28:00+09:00", "metrics": {"current_price": 74231, "day_open": 70922, "change_pct": 4.665689066862186}}
+{"symbol": "002800", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T15:28:01+09:00", "metrics": {"current_price": 72866, "day_open": 70733, "change_pct": 3.0155655775946166}}
+{"symbol": "003160", "event_type": "DAY_HIGH_BREAK", "occurred_at": "2026-01-09T15:28:03+09:00", "metrics": {"current_price": 74881, "day_high": 74881}}
+{"symbol": "003160", "event_type": "PRICE_JUMP", "occurred_at": "2026-01-09T15:28:03+09:00", "metrics": {"current_price": 74881, "day_open": 71434, "change_pct": 4.825433267071703}}

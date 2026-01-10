@@ -45,6 +45,18 @@ if errorlevel 1 (
 echo [SUCCESS] OHLCVCollector >> "%LOG_FILE%"
 
 REM ===============================
+REM 2.5️⃣ 종목선정회의 (MarketContext)
+REM ===============================
+echo [2.5] MarketContext >> "%LOG_FILE%"
+"%VENV_PYTHON%" scout_selector\market_context.py --date %TODAY% --auto >> "%LOG_FILE%" 2>&1
+if errorlevel 1 (
+    echo [WARN] MarketContext >> "%LOG_FILE%"
+    REM 종목선정회의 실패는 파이프라인을 중단하지 않음 (문지기봇은 정상 동작)
+) else (
+    echo [SUCCESS] MarketContext >> "%LOG_FILE%"
+)
+
+REM ===============================
 REM 3️⃣ 문지기봇
 REM ===============================
 echo [3] Gatekeeper >> "%LOG_FILE%"

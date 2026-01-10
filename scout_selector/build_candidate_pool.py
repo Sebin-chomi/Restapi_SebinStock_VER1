@@ -27,12 +27,17 @@ import sys
 import io
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Set, Optional
+from typing import Dict, List, Optional
 
 # Windows 콘솔 인코딩 설정
 if sys.platform == "win32":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+
+# 프로젝트 루트를 Python 경로에 추가 (모듈 import를 위해)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 # =========================
 # Constants
@@ -55,107 +60,126 @@ DEFAULT_VOLUME_TOP = 200
 BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = BASE_DIR / "output"
 INPUT_DIR = BASE_DIR / "input"
+HISTORY_DIR = OUTPUT_DIR / "history"
 
 OUTPUT_DIR.mkdir(exist_ok=True)
+HISTORY_DIR.mkdir(exist_ok=True)
 
 
 # =========================
-# Input Source Collectors
+# Input Source Loaders (Stub Design)
 # =========================
 
-def collect_turnover_top(date: str, top_n: int = DEFAULT_TURNOVER_TOP) -> Set[str]:
+def load_fixed_symbols() -> List[str]:
     """
-    거래대금 상위 N 종목 수집
+    항상 포함되어야 하는 기준 종목 반환
+    
+    Returns:
+        고정 종목 코드 리스트 (예: ['005930', '000660'])
+    
+    실패 ❌ 없음
+    최소 1개 이상 보장
+    """
+    return FIXED_SYMBOLS.copy()
+
+
+def load_turnover_top(date: str, limit: Optional[int] = None) -> List[str]:
+    """
+    특정 날짜 기준 거래대금 상위 종목 반환
+    
+    현재 단계:
+    - 구현 미완료
+    - 반드시 빈 리스트 반환
     
     Args:
         date: 날짜 (YYYYMMDD)
-        top_n: 상위 N개
+        limit: 상위 N개 (현재 미사용)
         
     Returns:
-        종목 코드 set
-    """
-    symbols = set()
+        종목 코드 리스트 (현재는 빈 리스트)
     
+    📌 주의
+    - 예외 발생 ❌
+    - 파일 없음 ❌
+    - API 실패 ❌
+    → 전부 빈 리스트로 흡수
+    """
+    # 스텁: 항상 빈 리스트 반환
+    return []
+
+
+def load_volume_top(date: str, limit: Optional[int] = None) -> List[str]:
+    """
+    특정 날짜 기준 거래량 상위 종목 반환
+    
+    현재 단계:
+    - 구현 미완료
+    - 반드시 빈 리스트 반환
+    
+    Args:
+        date: 날짜 (YYYYMMDD)
+        limit: 상위 N개 (현재 미사용)
+        
+    Returns:
+        종목 코드 리스트 (현재는 빈 리스트)
+    
+    📌 주의
+    - 예외 발생 ❌
+    - 파일 없음 ❌
+    - API 실패 ❌
+    → 전부 빈 리스트로 흡수
+    """
+    # 스텁: 항상 빈 리스트 반환
+    return []
+
+
+def load_condition_results(date: str) -> List[str]:
+    """
+    조건식 결과 파일에서 종목 코드 로드
+    
+    파일 경로:
+    scout_selector/input/conditions/conditions_YYYYMMDD.json
+    
+    파일이 없으면:
+    - 오류 ❌
+    - 빈 리스트 반환 ⭕
+    
+    Args:
+        date: 날짜 (YYYYMMDD)
+        
+    Returns:
+        종목 코드 리스트
+    
+    📌 여기서도 파일 없음 = 정상
+    """
+    symbols = []
+    
+    # 파일 경로
+    condition_file = INPUT_DIR / "conditions" / f"conditions_{date}.json"
+    
+    # 파일이 없으면 빈 리스트 반환 (정상)
+    if not condition_file.exists():
+        return []
+    
+    # 파일 읽기 시도 (실패해도 빈 리스트 반환)
     try:
-        # 방법 1: API나 외부 소스에서 가져오기 (추후 확장)
-        # 예: pykrx, 키움 API 등
+        with open(condition_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        
+        # 조건식 결과에서 종목 코드 추출
+        for condition in data.get("conditions", []):
+            for symbol in condition.get("symbols", []):
+                if symbol:
+                    symbols.append(str(symbol).zfill(6))  # 6자리 정규화
+        
+        # 중복 제거
+        symbols = sorted(list(set(symbols)))
+        
+    except Exception:
+        # 모든 예외는 빈 리스트로 흡수
         pass
-    except Exception as e:
-        print(f"  ⚠️  거래대금 상위 수집 실패: {e}")
-    
-    # 방법 2: 파일에서 읽기 (추후 확장)
-    # 예: data/turnover_top_YYYYMMDD.csv 등
     
     return symbols
-
-
-def collect_volume_top(date: str, top_n: int = DEFAULT_VOLUME_TOP) -> Set[str]:
-    """
-    거래량 상위/급증 종목 수집
-    
-    Args:
-        date: 날짜 (YYYYMMDD)
-        top_n: 상위 N개
-        
-    Returns:
-        종목 코드 set
-    """
-    symbols = set()
-    
-    try:
-        # 방법 1: API나 외부 소스에서 가져오기 (추후 확장)
-        pass
-    except Exception as e:
-        print(f"  ⚠️  거래량 상위 수집 실패: {e}")
-    
-    # 방법 2: 파일에서 읽기 (추후 확장)
-    
-    return symbols
-
-
-def collect_condition_symbols(date: str) -> Set[str]:
-    """
-    조건식/시그널 결과 종목 수집
-    
-    Args:
-        date: 날짜 (YYYYMMDD)
-        
-    Returns:
-        종목 코드 set
-    """
-    symbols = set()
-    
-    try:
-        # input/conditions/conditions_YYYYMMDD.json에서 읽기
-        condition_file = INPUT_DIR / "conditions" / f"conditions_{date}.json"
-        
-        if condition_file.exists():
-            with open(condition_file, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                
-            for condition in data.get("conditions", []):
-                for symbol in condition.get("symbols", []):
-                    if symbol:
-                        symbols.add(symbol)
-                        
-            print(f"  ✅ 조건식 종목: {len(symbols)}개")
-        else:
-            print(f"  ℹ️  조건식 파일 없음: {condition_file.name}")
-            
-    except Exception as e:
-        print(f"  ⚠️  조건식 종목 수집 실패: {e}")
-    
-    return symbols
-
-
-def collect_fixed_symbols() -> Set[str]:
-    """
-    고정 기준 종목 수집 (대형주 등)
-    
-    Returns:
-        종목 코드 set
-    """
-    return set(FIXED_SYMBOLS)
 
 
 # =========================
@@ -181,61 +205,41 @@ def build_candidate_pool(
     print("=" * 60)
     print(f"\n📅 날짜: {date}")
     
-    # 입력 소스별 수집
-    print(f"\n📥 입력 소스 수집 중...")
+    # 입력 소스별 수집 (설계서 스텁 구조)
+    print("\n📥 입력 소스 수집 중...")
     
-    sources_count = {}
-    all_symbols = set()
+    # 1. 고정 종목 로더
+    fixed = load_fixed_symbols()
+    print(f"INFO  Fixed symbols loaded: {len(fixed)}")
     
-    # 1. 거래대금 상위
-    print(f"\n1️⃣ 거래대금 상위 {DEFAULT_TURNOVER_TOP}개")
-    turnover_symbols = collect_turnover_top(date, DEFAULT_TURNOVER_TOP)
-    sources_count["turnover_top"] = len(turnover_symbols)
-    all_symbols.update(turnover_symbols)
-    print(f"   수집: {len(turnover_symbols)}개")
+    # 2. 거래대금 상위 로더 (스텁)
+    turnover = load_turnover_top(date, limit=DEFAULT_TURNOVER_TOP)
+    print(f"INFO  Turnover top loaded: {len(turnover)}")
     
-    # 2. 거래량 상위
-    print(f"\n2️⃣ 거래량 상위 {DEFAULT_VOLUME_TOP}개")
-    volume_symbols = collect_volume_top(date, DEFAULT_VOLUME_TOP)
-    sources_count["volume_top"] = len(volume_symbols)
-    all_symbols.update(volume_symbols)
-    print(f"   수집: {len(volume_symbols)}개")
+    # 3. 거래량 상위 로더 (스텁)
+    volume = load_volume_top(date, limit=DEFAULT_VOLUME_TOP)
+    print(f"INFO  Volume top loaded: {len(volume)}")
     
-    # 3. 조건식 결과
-    print(f"\n3️⃣ 조건식/시그널 결과")
-    condition_symbols = collect_condition_symbols(date)
-    sources_count["conditions"] = len(condition_symbols)
-    all_symbols.update(condition_symbols)
+    # 4. 조건식 결과 로더 (스텁 + 파일 체크)
+    conditions = load_condition_results(date)
+    print(f"INFO  Condition results loaded: {len(conditions)}")
     
-    # 4. 고정 기준 종목
-    print(f"\n4️⃣ 고정 기준 종목")
-    fixed_symbols = collect_fixed_symbols()
-    sources_count["fixed_symbols"] = len(fixed_symbols)
-    all_symbols.update(fixed_symbols)
-    print(f"   수집: {len(fixed_symbols)}개 ({', '.join(sorted(fixed_symbols))})")
+    # 중복 제거 정책 (설계서 6장)
+    all_symbols = fixed + turnover + volume + conditions
+    candidate_symbols = sorted(list(set(all_symbols)))
     
-    # 중복 제거 및 정렬 (재현성을 위해)
-    candidate_symbols = sorted(list(all_symbols))
-    
-    # 최대 종목 수 제한 (옵션)
-    if max_symbols and len(candidate_symbols) > max_symbols:
-        print(f"\n⚠️  후보 풀 크기 제한: {len(candidate_symbols)} → {max_symbols}")
-        # 우선순위: 고정 종목 > 조건식 > 거래대금 > 거래량
-        priority_symbols = set()
-        priority_symbols.update(fixed_symbols)
-        priority_symbols.update(condition_symbols)
-        priority_symbols.update(turnover_symbols)
-        
-        if len(priority_symbols) < max_symbols:
-            remaining = max_symbols - len(priority_symbols)
-            volume_priority = sorted(list(volume_symbols - priority_symbols))[:remaining]
-            priority_symbols.update(volume_priority)
-        
-        candidate_symbols = sorted(list(priority_symbols))[:max_symbols]
+    # sources 카운트 반영 규칙 (설계서 5장)
+    # 함수 반환 기준으로만 집계 (중복 제거 전/후 상관 없음)
+    sources_count = {
+        "turnover_top": len(turnover),
+        "volume_top": len(volume),
+        "conditions": len(conditions),
+        "fixed_symbols": len(fixed),
+    }
     
     # 최소 후보 풀 보장 (모든 소스 실패 시)
     if not candidate_symbols:
-        print(f"\n⚠️  모든 입력 소스 실패 → 최소 후보 풀 생성 (고정 종목만)")
+        print("\n⚠️  모든 입력 소스 실패 → 최소 후보 풀 생성 (고정 종목만)")
         candidate_symbols = sorted(FIXED_SYMBOLS)
         sources_count = {
             "turnover_top": 0,
@@ -244,8 +248,19 @@ def build_candidate_pool(
             "fixed_symbols": len(candidate_symbols),
         }
     
-    print(f"\n✅ 후보 풀 생성 완료")
+    print("\n✅ 후보 풀 생성 완료")
     print(f"   총 종목 수: {len(candidate_symbols)}개")
+    
+    # 로깅 가이드 (설계서 7장)
+    # WARN는 출력하되 종료 ❌
+    auto_sources_sum = (
+        sources_count.get("turnover_top", 0) +
+        sources_count.get("volume_top", 0) +
+        sources_count.get("conditions", 0)
+    )
+    if auto_sources_sum == 0:
+        print(f"\n⚠️  WARN  No dynamic sources available for date={date}")
+        print("   → 고정 종목만 포함됨 (정상 상태, 오류 아님)")
     
     # 출력 구조 생성
     created_at = datetime.now().isoformat()
@@ -306,27 +321,63 @@ def main():
         print("=" * 60)
         sys.exit(0)  # 정상 종료 (오류 아님)
     
-    # 출력 파일 경로
-    output_file = OUTPUT_DIR / f"candidate_pool_{date}.json"
+    # history 디렉터리 경로 생성 (YYYY/MM 구조)
+    year = date[:4]
+    month = date[4:6]
+    history_date_dir = HISTORY_DIR / year / month
+    history_date_dir.mkdir(parents=True, exist_ok=True)
     
-    # 멱등성 체크 (기존 파일이 있으면 재생성하지 않음)
-    if output_file.exists() and not args.force:
+    # history 파일 경로 (immutable)
+    history_file = history_date_dir / f"candidate_pool_{date}.json"
+    
+    # latest.json 경로 (운영 편의용)
+    latest_file = OUTPUT_DIR / "latest.json"
+    
+    # 멱등성 체크: history 파일이 이미 존재하면 재생성하지 않음 (immutable 원칙)
+    if history_file.exists() and not args.force:
         print("=" * 60)
-        print(f"ℹ️  출력 파일이 이미 존재합니다: {output_file.name}")
-        print(f"   재생성하려면 --force 옵션을 사용하세요.")
+        print(f"ℹ️  history 파일이 이미 존재합니다: {history_file}")
+        print("   history는 불변(immutable)이므로 덮어쓰지 않습니다.")
+        print("   재생성하려면 --force 옵션을 사용하세요.")
         print("=" * 60)
+        
+        # 기존 파일이 있으면 latest.json만 갱신 (선택적)
+        # 백필 실행 시에는 latest.json을 갱신하지 않음 (오늘 날짜인 경우만)
+        today_str = datetime.now().strftime("%Y%m%d")
+        if date == today_str:
+            try:
+                import shutil
+                shutil.copy2(str(history_file), str(latest_file))
+                print("✅ latest.json 갱신 완료 (기존 파일 사용)")
+            except Exception as e:
+                print(f"⚠️  latest.json 갱신 실패: {e}")
+        
         return
     
     # 후보 풀 생성
     try:
         output = build_candidate_pool(date, max_symbols=args.max_symbols)
         
-        # 파일 저장
-        with open(output_file, "w", encoding="utf-8") as f:
+        # 1. history 파일 저장 (immutable)
+        with open(history_file, "w", encoding="utf-8") as f:
             json.dump(output, f, ensure_ascii=False, indent=2)
         
-        print(f"\n📁 저장 완료: {output_file}")
-        print(f"   캔들기록봇이 이 파일을 입력으로 사용합니다.")
+        print(f"\n📁 history 저장 완료: {history_file}")
+        
+        # 2. 저장 성공 시 latest.json 갱신 (오늘 날짜인 경우만)
+        today_str = datetime.now().strftime("%Y%m%d")
+        if date == today_str:
+            try:
+                import shutil
+                shutil.copy2(str(history_file), str(latest_file))
+                print("✅ latest.json 갱신 완료")
+            except Exception as e:
+                print(f"⚠️  latest.json 갱신 실패: {e}")
+                # latest 실패해도 history 저장은 성공했으므로 계속 진행
+        else:
+            print("ℹ️  백필 실행이므로 latest.json은 갱신하지 않습니다.")
+        
+        print("   캔들기록봇이 latest.json 또는 history 파일을 입력으로 사용합니다.")
         print("=" * 60)
         
     except Exception as e:
@@ -335,8 +386,17 @@ def main():
         traceback.print_exc()
         
         # 최소 후보 풀 생성 시도
-        print(f"\n⚠️  최소 후보 풀 생성 시도...")
+        print("\n⚠️  최소 후보 풀 생성 시도...")
         try:
+            # history 디렉터리 경로 생성 (YYYY/MM 구조)
+            year = date[:4]
+            month = date[4:6]
+            history_date_dir = HISTORY_DIR / year / month
+            history_date_dir.mkdir(parents=True, exist_ok=True)
+            
+            history_file = history_date_dir / f"candidate_pool_{date}.json"
+            latest_file = OUTPUT_DIR / "latest.json"
+            
             minimal_output = {
                 "meta": {
                     "date": date,
@@ -353,11 +413,22 @@ def main():
                 "symbols": sorted(FIXED_SYMBOLS),
             }
             
-            with open(output_file, "w", encoding="utf-8") as f:
+            # history 파일 저장
+            with open(history_file, "w", encoding="utf-8") as f:
                 json.dump(minimal_output, f, ensure_ascii=False, indent=2)
             
-            print(f"✅ 최소 후보 풀 저장 완료: {output_file}")
+            print(f"✅ 최소 후보 풀 저장 완료: {history_file}")
             print(f"   (고정 종목만 포함: {', '.join(FIXED_SYMBOLS)})")
+            
+            # latest.json 갱신 (오늘 날짜인 경우만)
+            today_str = datetime.now().strftime("%Y%m%d")
+            if date == today_str:
+                try:
+                    import shutil
+                    shutil.copy2(str(history_file), str(latest_file))
+                    print("✅ latest.json 갱신 완료")
+                except Exception as e3:
+                    print(f"⚠️  latest.json 갱신 실패: {e3}")
             
         except Exception as e2:
             print(f"❌ 최소 후보 풀 생성도 실패: {e2}")

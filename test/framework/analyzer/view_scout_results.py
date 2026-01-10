@@ -26,12 +26,32 @@ sys.path.insert(0, PROJECT_ROOT)
 SCOUT_RECORDS_DIR = os.path.join(PROJECT_ROOT, "records", "scout")
 
 
+def get_scout_date_dir(date: str) -> str:
+    """
+    날짜를 YYYY/MM/YYYYMMDD 구조의 디렉터리 경로로 변환
+    
+    Args:
+        date: 날짜 (YYYY-MM-DD 형식)
+        
+    Returns:
+        YYYY/MM/YYYYMMDD 구조의 디렉터리 경로
+    """
+    # YYYY-MM-DD → YYYY, MM, YYYYMMDD 추출
+    year, month, day = date.split("-")
+    date_compact = f"{year}{month}{day}"
+    
+    # YYYY/MM/YYYYMMDD 구조로 경로 생성
+    date_dir = os.path.join(SCOUT_RECORDS_DIR, year, month, date_compact)
+    return date_dir
+
+
 def view_scout_results(date: str = None):
     """정찰 결과 간단 확인"""
     if date is None:
         date = datetime.now().strftime("%Y-%m-%d")
     
-    date_dir = os.path.join(SCOUT_RECORDS_DIR, date)
+    # YYYY/MM/YYYYMMDD 구조로 디렉터리 경로 생성
+    date_dir = get_scout_date_dir(date)
     
     if not os.path.exists(date_dir):
         print(f"❌ {date}의 정찰 기록이 없습니다.")

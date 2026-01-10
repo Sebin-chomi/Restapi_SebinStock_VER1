@@ -35,7 +35,7 @@ def handle_command(text: str):
     if text == "/help":
         send_message(
             "📋 정찰봇 명령어\n\n"
-            "/add 종목코드 - 종목 추가\n"
+            "/add 종목코드 - 종목 추가 (당일 한정, 장 마감 후 자동 제거)\n"
             "/remove 종목코드 - 종목 제거\n"
             "/list - 현재 watchlist 확인\n"
             "/status - 상태 확인"
@@ -64,12 +64,13 @@ def handle_command(text: str):
                 "WATCHLIST",
                 f"➕ 종목 추가: {stk_cd}\n"
                 f"현재 watchlist: {len(current_list)} 종목\n"
-                f"수동 추가: {manual_count} 종목"
+                f"수동 추가 (당일 한정): {manual_count} 종목"
             )
             send_message(
                 f"✅ 종목 추가됨: {stk_cd}\n"
                 f"현재 watchlist: {len(current_list)} 종목\n"
-                f"수동 추가: {manual_count} 종목"
+                f"수동 추가 (당일 한정): {manual_count} 종목\n"
+                f"💡 장 마감 후 자동으로 제거됩니다."
             )
         else:
             # 파일 저장 실패해도 메모리는 추가됨 (실시간 감시는 계속)
@@ -83,7 +84,8 @@ def handle_command(text: str):
             send_message(
                 f"✅ 종목 추가됨: {stk_cd}\n"
                 f"⚠️ 파일 저장 실패 (재시작 시 사라질 수 있음)\n"
-                f"현재 watchlist: {len(current_list)} 종목"
+                f"현재 watchlist: {len(current_list)} 종목\n"
+                f"💡 장 마감 후 자동으로 제거됩니다."
             )
         return
     
@@ -115,7 +117,7 @@ def handle_command(text: str):
             send_message(
                 f"✅ 종목 제거됨: {stk_cd}\n"
                 f"현재 watchlist: {len(current_list)} 종목\n"
-                f"수동 추가: {manual_count} 종목"
+                f"수동 추가 (당일 한정): {manual_count} 종목"
             )
         else:
             tel_log(

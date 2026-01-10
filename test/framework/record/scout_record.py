@@ -81,11 +81,31 @@ def build_scout_record_v2(
     return record
 
 
+def get_scout_date_dir(date: str) -> str:
+    """
+    날짜를 YYYY/MM/YYYYMMDD 구조의 디렉터리 경로로 변환
+    
+    Args:
+        date: 날짜 (YYYY-MM-DD 형식)
+        
+    Returns:
+        YYYY/MM/YYYYMMDD 구조의 디렉터리 경로
+    """
+    # YYYY-MM-DD → YYYY, MM, YYYYMMDD 추출
+    year, month, day = date.split("-")
+    date_compact = f"{year}{month}{day}"
+    
+    # YYYY/MM/YYYYMMDD 구조로 경로 생성
+    date_dir = os.path.join(BASE_DIR, year, month, date_compact)
+    return date_dir
+
+
 def save_scout_record(record: Dict[str, Any]) -> str:
     stock = record["meta"]["stock_code"]
     date = record["meta"]["date"]
 
-    dir_path = os.path.join(BASE_DIR, date)
+    # YYYY/MM/YYYYMMDD 구조로 디렉터리 생성
+    dir_path = get_scout_date_dir(date)
     os.makedirs(dir_path, exist_ok=True)
 
     file_path = os.path.join(dir_path, f"{stock}.jsonl")
